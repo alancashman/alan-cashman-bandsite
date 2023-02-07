@@ -139,3 +139,21 @@
 
 }
 
+// PHOTO GALLERY
+
+.gallery {
+    background-color: $color-mercury;
+    padding: 1rem;
+
+    &__heading {
+        color: $color-bandsite-black;
+        font-size: 3rem;
+        font-weight: 400;
+        padding: 1rem 0;
+    }
+
+    &__img {
+        width: 100%;
+        padding: 0.5rem 0;
+    }
+}
