@@ -1,2 +1,53 @@
 @use 'partials/global' as *;
 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+// HEADER
+
+.header{ 
+    display: flex;
+    flex-direction: column;
+    background-color: $color-bandsite-black;
+    color: $color-mercury;
+    align-items: center;
+    padding-top: 1rem;
+
+    &__heading {
+        text-transform: uppercase;
+    }
+
+
+    &__buttons{
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+
+        // padding: 1rem;
+    }
+
+    &__button {
+        color: $color-mercury;
+        text-decoration: none;
+        padding: 1rem;
+        width: 50%;
+        text-align: center;
+        // margin:1rem;
+        
+
+
+        &--active {
+            // margin: 1rem;
+            border-bottom: 4px solid $color-mercury;
+        }
+
+        &:hover,
+        &:active {
+            color: $color-white;
+            border-bottom: 4px solid $color-white
+        }
+    }
+}
