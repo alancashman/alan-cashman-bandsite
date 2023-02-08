@@ -1,13 +1,32 @@
 @use './variables' as *;
+@use './mixins' as *;
 
 .footer {
     padding: 3rem 1rem;
     background-color: $color-bandsite-black;
     color: $color-mercury;
+    
+
+    @include tablet {
+        padding: 3rem;
+        position: relative;
+    }
+
+    &__row {
+        @include tablet {
+            display: flex;
+            gap: 4rem;
+            align-items: center;
+        }
+    }
 
     &__heading {
     font-size: 3.5rem;
     font-weight: 400;
+
+    @include tablet {
+        font-weight: 600;
+    }
     }
 
     &__icons {
@@ -21,6 +40,20 @@
         width: 4rem;
         height: 4rem;
         color: $color-bandsite-black;
+
+        @include tablet {
+            width: 2rem;
+            height: 2rem;
+
+        }
+    }
+
+    &__columns {
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            // gap: 3rem;
+        }
     }
 
     &__section {
@@ -35,16 +68,31 @@
         font-size: 1.25rem;
         line-height: 1.75rem;
         font-weight: 600;
+
+        @include tablet {
+            font-size: 1rem;
+        }
     }
 
     &__text { 
         font-size: 1.25rem;
         line-height: 1.75rem;
         font-weight: 400;
+
+        @include tablet {
+            font-size: 1rem;
+        }
         
     }
 
     &__logo {
         margin: 4rem 0 2rem;
+
+        @include tablet {
+            position: absolute;
+            top: 15vh;
+            right: 5vw;
+
+        }
     }
 }

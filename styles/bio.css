@@ -24,9 +24,27 @@
   background-color: #323232;
   color: #e1e1e1;
 }
+@media (min-width: 768px) {
+  .footer {
+    padding: 3rem;
+    position: relative;
+  }
+}
+@media (min-width: 768px) {
+  .footer__row {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+  }
+}
 .footer__heading {
   font-size: 3.5rem;
   font-weight: 400;
+}
+@media (min-width: 768px) {
+  .footer__heading {
+    font-weight: 600;
+  }
 }
 .footer__icons {
   display: flex;
@@ -39,6 +57,18 @@
   height: 4rem;
   color: #323232;
 }
+@media (min-width: 768px) {
+  .footer__icon {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+@media (min-width: 768px) {
+  .footer__columns {
+    display: flex;
+    justify-content: space-between;
+  }
+}
 .footer__section {
   margin: 3rem 0;
 }
@@ -50,13 +80,30 @@
   line-height: 1.75rem;
   font-weight: 600;
 }
+@media (min-width: 768px) {
+  .footer__subheading {
+    font-size: 1rem;
+  }
+}
 .footer__text {
   font-size: 1.25rem;
   line-height: 1.75rem;
   font-weight: 400;
 }
+@media (min-width: 768px) {
+  .footer__text {
+    font-size: 1rem;
+  }
+}
 .footer__logo {
   margin: 4rem 0 2rem;
+}
+@media (min-width: 768px) {
+  .footer__logo {
+    position: absolute;
+    top: 15vh;
+    right: 5vw;
+  }
 }
 
 .logo__bandsite {
