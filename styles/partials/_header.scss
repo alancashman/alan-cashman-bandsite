@@ -1,0 +1,65 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+// HEADER
+
+.logo__bandsite {
+    height: 3rem;
+    line-height: 2rem;
+}
+
+.header{ 
+    display: flex;
+    flex-direction: column;
+    background-color: $color-bandsite-black;
+    color: $color-mercury;
+    align-items: center;
+    padding-top: 1rem;
+    font-weight: normal;
+
+    @include tablet {
+        flex-direction: row;
+        padding: 0 2rem;
+    }
+  
+
+    &__buttons{
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+
+        @include tablet {
+            width: 40%;
+        }
+
+
+    }
+
+    &__button {
+        color: $color-mercury;
+        text-decoration: none;
+        padding: 1rem;
+        width: 50%;
+        text-align: center;
+        font-size: 1.25rem;
+        font-weight: 400;
+        line-height: 1.375rem;
+
+        @include tablet {
+            padding: 3rem 0;
+            width: auto;
+        }
+
+        &--active {
+            // margin: 1rem;
+            border-bottom: 4px solid $color-mercury;
+            font-weight: bold;
+        }
+
+        &:hover,
+        &:active {
+            color: $color-white;
+            border-bottom: 4px solid $color-white
+        }
+    }
+}

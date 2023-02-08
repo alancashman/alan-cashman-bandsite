@@ -1,65 +1,6 @@
 @use './partials/global' as *;
 @use './partials/variables' as *;
 
-*,
-*::before,
-*::after {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'AvenirNext LT Pro';
-}
-
-// HEADER
-
-.logo__bandsite {
-    height: 3rem;
-    line-height: 2rem;
-}
-
-.header{ 
-    display: flex;
-    flex-direction: column;
-    background-color: $color-bandsite-black;
-    color: $color-mercury;
-    align-items: center;
-    padding-top: 1rem;
-    font-weight: normal;
-
-    &__buttons{
-        display: flex;
-        justify-content: space-evenly;
-        width: 100%;
-
-
-    }
-
-    &__button {
-        color: $color-mercury;
-        text-decoration: none;
-        padding: 1rem;
-        width: 50%;
-        text-align: center;
-        font-size: 1.25rem;
-        font-weight: 400;
-        line-height: 1.375rem;
-
-        
-
-
-        &--active {
-            // margin: 1rem;
-            border-bottom: 4px solid $color-mercury;
-            font-weight: bold;
-        }
-
-        &:hover,
-        &:active {
-            color: $color-white;
-            border-bottom: 4px solid $color-white
-        }
-    }
-}
 
 // HERO
 
@@ -73,9 +14,11 @@
     display: flex;
     align-items: center;
     position: relative;
+    
 
     &__heading {
         padding: 0 1rem;
+        color: $color-mercury;
         font-size: 3rem;
         font-weight: 400;
         z-index: 2;

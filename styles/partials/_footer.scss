@@ -1,7 +1,7 @@
 @use './variables' as *;
 
 .footer {
-    padding: 2rem 1rem;
+    padding: 3rem 1rem;
     background-color: $color-bandsite-black;
     color: $color-mercury;
 
@@ -24,7 +24,7 @@
     }
 
     &__section {
-        margin: 2rem 0;
+        margin: 3rem 0;
     }
 
     &__subheading {
