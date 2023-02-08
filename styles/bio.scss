@@ -1,4 +1,5 @@
-@use 'partials/global' as *;
+@use './partials/global' as *;
+@use './partials/variables' as *;
 
 *,
 *::before,
@@ -11,6 +12,11 @@
 
 // HEADER
 
+.logo__bandsite {
+    height: 3rem;
+    line-height: 2rem;
+}
+
 .header{ 
     display: flex;
     flex-direction: column;
@@ -19,12 +25,6 @@
     align-items: center;
     padding-top: 1rem;
     font-weight: normal;
-
-    &__heading {
-        height: 2rem;
-        line-height: 2rem;
-    }
-
 
     &__buttons{
         display: flex;
@@ -40,7 +40,7 @@
         padding: 1rem;
         width: 50%;
         text-align: center;
-        font-size: 0.875rem;
+        font-size: 1.25rem;
         font-weight: 400;
         line-height: 1.375rem;
 

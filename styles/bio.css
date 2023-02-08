@@ -19,6 +19,43 @@
   font-style: normal;
   font-display: swap;
 }
+.footer {
+  padding: 2rem 1rem;
+  background-color: #323232;
+  color: #e1e1e1;
+}
+.footer__heading {
+  font-size: 3.5rem;
+  font-weight: 400;
+}
+.footer__icons {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+.footer__icon {
+  margin: 2rem 0;
+  width: 4rem;
+  height: 4rem;
+  color: #323232;
+}
+.footer__section {
+  margin: 2rem 0;
+}
+.footer__subheading {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+}
+.footer__text {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+}
+.footer__logo {
+  margin: 4rem 0 2rem;
+}
+
 *,
 *::before,
 *::after {
@@ -26,6 +63,11 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "AvenirNext LT Pro";
+}
+
+.logo__bandsite {
+  height: 3rem;
+  line-height: 2rem;
 }
 
 .header {
@@ -36,10 +78,6 @@
   align-items: center;
   padding-top: 1rem;
   font-weight: normal;
-}
-.header__heading {
-  height: 2rem;
-  line-height: 2rem;
 }
 .header__buttons {
   display: flex;
@@ -52,7 +90,7 @@
   padding: 1rem;
   width: 50%;
   text-align: center;
-  font-size: 0.875rem;
+  font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.375rem;
 }
