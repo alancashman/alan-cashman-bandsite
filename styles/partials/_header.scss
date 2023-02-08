@@ -6,6 +6,10 @@
 .logo__bandsite {
     height: 3rem;
     line-height: 2rem;
+
+    @include tablet {
+        height: 2rem;
+    }
 }
 
 .header{ 
@@ -19,7 +23,7 @@
 
     @include tablet {
         flex-direction: row;
-        padding: 0 2rem;
+        padding: 0 3rem;
     }
   
 
@@ -46,7 +50,7 @@
         line-height: 1.375rem;
 
         @include tablet {
-            padding: 3rem 0;
+            padding: 2rem 0;
             width: auto;
         }
 

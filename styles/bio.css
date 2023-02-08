@@ -60,6 +60,11 @@
   height: 3rem;
   line-height: 2rem;
 }
+@media (min-width: 768px) {
+  .logo__bandsite {
+    height: 2rem;
+  }
+}
 
 .header {
   display: flex;
@@ -73,7 +78,7 @@
 @media (min-width: 768px) {
   .header {
     flex-direction: row;
-    padding: 0 2rem;
+    padding: 0 3rem;
   }
 }
 .header__buttons {
@@ -98,7 +103,7 @@
 }
 @media (min-width: 768px) {
   .header__button {
-    padding: 3rem 0;
+    padding: 2rem 0;
     width: auto;
   }
 }
@@ -138,6 +143,12 @@
   font-weight: 400;
   z-index: 2;
 }
+@media (min-width: 768px) {
+  .hero__heading {
+    padding: 0 3rem;
+    font-size: 5rem;
+  }
+}
 .hero__overlay {
   background-color: rgba(50, 50, 50, 0.5);
   position: absolute;
@@ -155,16 +166,33 @@
   background-color: #fff;
   padding: 1rem;
 }
+@media (min-width: 768px) {
+  .about {
+    padding: 3rem;
+  }
+}
 .about__heading {
   font-size: 2rem;
   font-weight: 700;
   line-height: 2rem;
   padding: 1.5rem 0;
 }
+@media (min-width: 768px) {
+  .about__heading {
+    font-size: 3rem;
+    font-weight: 400;
+  }
+}
 .about__img {
   margin: 1rem 0;
   width: 100%;
   padding-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .about__img {
+    padding: 1rem 3.5rem;
+    height: 80vh;
+  }
 }
 .about__quote {
   font-weight: 400;
@@ -172,17 +200,43 @@
   line-height: 2.5rem;
   padding-bottom: 1.5rem;
 }
+@media (min-width: 768px) {
+  .about__quote {
+    padding: 0.5rem 3.5rem;
+  }
+  .about__quote:last-of-type {
+    font-size: 1.25rem;
+  }
+}
 .about__subheading {
   font-weight: 400;
   line-height: 1.375rem;
   font-size: 1.75rem;
   padding: 2rem 0;
 }
+@media (min-width: 768px) {
+  .about__subheading {
+    padding: 2rem 3.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .about__paragraph-container {
+    display: flex;
+    padding: 0 3.5rem;
+  }
+}
 .about__paragraph {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 2.25rem;
   padding-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .about__paragraph {
+    margin: 0 1.75rem 0 0;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+  }
 }
 
 .gallery {
