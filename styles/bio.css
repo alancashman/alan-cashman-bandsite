@@ -113,7 +113,12 @@
 }
 @media (min-width: 768px) {
   .logo__bandsite {
-    height: 2rem;
+    height: 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .logo__bandsite {
+    height: 1rem;
   }
 }
 
@@ -132,6 +137,11 @@
     padding: 0 3rem;
   }
 }
+@media (min-width: 1280px) {
+  .header {
+    padding: 0 6rem;
+  }
+}
 .header__buttons {
   display: flex;
   justify-content: space-evenly;
@@ -140,6 +150,11 @@
 @media (min-width: 768px) {
   .header__buttons {
     width: 40%;
+  }
+}
+@media (min-width: 1280px) {
+  .header__buttons {
+    width: 30%;
   }
 }
 .header__button {
@@ -156,6 +171,12 @@
   .header__button {
     padding: 2rem 0;
     width: auto;
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .header__button {
+    font-size: 0.875rem;
   }
 }
 .header__button--active {
@@ -187,6 +208,11 @@
   align-items: center;
   position: relative;
 }
+@media (min-width: 1280px) {
+  .hero {
+    height: 40rem;
+  }
+}
 .hero__heading {
   padding: 0 1rem;
   color: #e1e1e1;
@@ -208,6 +234,11 @@
   z-index: 1;
   height: 30rem;
   width: 100%;
+}
+@media (min-width: 1280px) {
+  .hero__overlay {
+    height: 40rem;
+  }
 }
 
 .about {
@@ -296,13 +327,13 @@
 }
 @media (min-width: 768px) {
   .gallery {
-    padding: 1.5rem;
+    padding: 3rem;
   }
 }
 @media (min-width: 768px) {
   .gallery__image-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
     gap: 1.5rem;
   }
@@ -316,10 +347,14 @@
 .gallery__img {
   width: 100%;
   padding: 0.5rem 0;
+  transition: all 0.3s ease;
 }
 @media (min-width: 768px) {
   .gallery__img {
     padding: 0;
     width: 30%;
+  }
+  .gallery__img:hover {
+    transform: scale(1.25);
   }
 }/*# sourceMappingURL=bio.css.map */
