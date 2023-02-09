@@ -12,20 +12,25 @@
         position: relative;
     }
 
+    @include desktop {
+        padding: 1rem 6rem;
+    }
+
     &__row {
         @include tablet {
             display: flex;
-            gap: 4rem;
+            gap: 3rem;
             align-items: center;
         }
     }
 
     &__heading {
-    font-size: 3.5rem;
-    font-weight: 400;
+        font-size: 3.5rem;
+        font-weight: 400;
 
     @include tablet {
         font-weight: 600;
+        font-size: 2.5rem;
     }
     }
 
@@ -33,6 +38,10 @@
         display: flex;
         width: 50%;
         gap: 4rem;
+
+        @include tablet {
+            gap: 1.5rem;
+        }
     }
 
     &__icon {
@@ -42,8 +51,8 @@
         color: $color-bandsite-black;
 
         @include tablet {
-            width: 2rem;
-            height: 2rem;
+            width: 1.5rem;
+            height: 1.5rem;
 
         }
     }
@@ -51,14 +60,20 @@
     &__columns {
         @include tablet {
             display: flex;
-            justify-content: space-between;
-            // gap: 3rem;
+            gap: 2rem;
+        }
+
+        @include desktop {
+            gap: 5rem;
         }
     }
 
     &__section {
         margin: 3rem 0;
 
+        @include tablet {
+            margin: 1rem 0;
+        }
         &:last-of-type {
             padding-bottom: 4rem;
         }
@@ -70,7 +85,7 @@
         font-weight: 600;
 
         @include tablet {
-            font-size: 1rem;
+            font-size: .875rem;
         }
     }
 
@@ -80,7 +95,7 @@
         font-weight: 400;
 
         @include tablet {
-            font-size: 1rem;
+            font-size: .875rem;
         }
         
     }
@@ -90,8 +105,8 @@
 
         @include tablet {
             position: absolute;
-            top: 15vh;
-            right: 5vw;
+            top: 4rem;
+            right: 3rem;
 
         }
     }
