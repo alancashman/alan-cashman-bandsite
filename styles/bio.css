@@ -260,19 +260,17 @@
   color: #e1e1e1;
   font-size: 3rem;
   font-weight: 600;
-  z-index: 2;
+  z-index: 1;
 }
 @media (min-width: 768px) {
   .hero__heading {
     padding: 0 3rem;
-    font-size: 5rem;
+    font-size: 4rem;
   }
 }
 @media (min-width: 1280px) {
   .hero__heading {
     padding: 0 6rem;
-    font-size: 4rem;
-    font-weight: 600;
   }
 }
 .hero__overlay {
@@ -313,11 +311,6 @@
   line-height: 2rem;
   padding: 1.5rem 0;
   align-self: flex-start;
-}
-@media (min-width: 768px) {
-  .about__heading {
-    font-size: 2.5rem;
-  }
 }
 .about__container {
   display: flex;
@@ -371,7 +364,7 @@
 }
 @media (min-width: 1280px) {
   .about__quote {
-    width: 80%;
+    width: 75%;
     font-size: 1.5rem;
     line-height: 2.5rem;
   }
@@ -404,7 +397,6 @@
 }
 @media (min-width: 768px) {
   .about__paragraph {
-    margin-right: 1.75rem;
     font-size: 1rem;
     line-height: 1.5rem;
   }
@@ -437,6 +429,11 @@
     gap: 1.5rem;
   }
 }
+@media (min-width: 1280px) {
+  .gallery__image-container {
+    gap: 1rem;
+  }
+}
 .gallery__heading {
   color: #323232;
   font-size: 3rem;
@@ -445,7 +442,7 @@
 }
 .gallery__img {
   width: 100%;
-  padding: 1rem 0;
+  padding-bottom: 1rem;
   filter: grayscale(1);
   transition: 0.3s ease;
 }
@@ -455,14 +452,17 @@
 @media (min-width: 768px) {
   .gallery__img {
     padding: 0;
-    width: 30%;
+    width: 31%;
   }
   .gallery__img:hover {
-    transform: scale(1.35);
+    transform: scale(1.25);
     z-index: 10;
   }
 }
 @media (min-width: 1280px) {
+  .gallery__img {
+    width: 32%;
+  }
   .gallery__img:hover {
     transform: scale(1.5);
     z-index: 10;

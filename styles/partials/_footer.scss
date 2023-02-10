@@ -94,7 +94,7 @@
     }
 
     &__subheading {
-        @include footer__text;
+        line-height: $footer-text-line-height;
         font-weight: 700;
 
         @include tablet {
@@ -103,7 +103,7 @@
     }
 
     &__text { 
-        @include footer__text;
+        line-height: $footer-text-line-height;
         font-weight: 400;
 
         @include tablet {

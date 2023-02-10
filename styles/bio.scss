@@ -26,17 +26,15 @@
         color: $color-foreground-light;
         font-size: 3rem;
         font-weight: 600;
-        z-index: 2;
+        z-index: 1;
 
         @include tablet {
-            padding: 0 3rem;
-            font-size: 5rem;
+            padding: $tablet-padding;
+            font-size: 4rem;
         }
 
         @include desktop {
-            padding: 0 6rem;
-            font-size: 4rem;
-            font-weight: 600;
+            padding: $desktop-padding;
         }
 
     }
@@ -80,10 +78,6 @@
         line-height: 2rem;
         padding: 1.5rem 0;
         align-self: flex-start;
-
-        @include tablet {
-            font-size: 2.5rem;
-        }
     }
 
     &__container {
@@ -138,7 +132,7 @@
         }
 
         @include desktop {
-            width: 80%;
+            width: 75%;
             font-size: 1.5rem;
             line-height: 2.5rem;
 
@@ -174,7 +168,6 @@
         padding-bottom: 1rem;
 
         @include tablet {
-            margin-right: 1.75rem;
             font-size: 1rem;
             line-height: 1.5rem;
         }
@@ -207,6 +200,10 @@
             flex-wrap: wrap;
             gap: 1.5rem;
         }
+
+        @include desktop {
+            gap: 1rem;
+        }
     }
 
     &__heading {
@@ -218,7 +215,7 @@
 
     &__img {
         width: 100%;
-        padding: 1rem 0;
+        padding-bottom: 1rem;
         filter: grayscale(1);
         transition: .3s ease;
 
@@ -228,16 +225,17 @@
         
         @include tablet {
             padding: 0;
-            width: 30%;
+            width: 31%;
             
             &:hover {
-                transform: scale(1.35);
+                transform: scale(1.25);
                 z-index: 10;
   
             }
         }
 
         @include desktop {
+            width: 32%;
             &:hover {
                 transform: scale(1.5);
                 z-index: 10;
