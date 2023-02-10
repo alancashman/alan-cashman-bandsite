@@ -1,5 +1,9 @@
 @use 'variables' as *;
 
+@mixin footer__text {
+    line-height: 1.5rem;
+}
+
 @mixin tablet {
     @media (min-width: $tablet-width) {
         @content

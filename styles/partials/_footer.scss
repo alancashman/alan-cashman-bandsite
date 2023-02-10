@@ -3,12 +3,12 @@
 
 .footer {
     padding: 3rem 1rem;
-    background-color: $color-bandsite-black;
-    color: $color-mercury;
+    background-color: $color-background;
+    color: $color-foreground-lightest;
     
 
     @include tablet {
-        padding: 3rem;
+        padding: 2rem;
         position: relative;
     }
 
@@ -22,15 +22,18 @@
             gap: 3rem;
             align-items: center;
         }
+
+        @include desktop {
+            gap: 6rem;
+        }
     }
 
     &__heading {
         font-size: 3.5rem;
-        font-weight: 400;
+        font-weight: 600;
 
     @include tablet {
-        font-weight: 600;
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     }
 
@@ -38,6 +41,7 @@
         display: flex;
         width: 50%;
         gap: 4rem;
+        
 
         @include tablet {
             gap: 1.5rem;
@@ -46,9 +50,9 @@
 
     &__icon {
         margin: 2rem 0;
-        width: 4rem;
-        height: 4rem;
-        color: $color-bandsite-black;
+        width: 3rem;
+        height: 3rem;
+        color: $color-background;
 
         @include tablet {
             width: 1.5rem;
@@ -69,20 +73,29 @@
     }
 
     &__section {
-        margin: 3rem 0;
+        margin: 2rem 0;
 
         @include tablet {
             margin: 1rem 0;
         }
+    }
+
+    &__column {
         &:last-of-type {
-            padding-bottom: 4rem;
+            margin-bottom: 6rem;
+        }
+
+        @include tablet {
+
+            &:last-of-type {
+                margin-bottom: 2rem;
+            }
         }
     }
 
     &__subheading {
-        font-size: 1.25rem;
-        line-height: 1.75rem;
-        font-weight: 600;
+        @include footer__text;
+        font-weight: 700;
 
         @include tablet {
             font-size: .875rem;
@@ -90,8 +103,7 @@
     }
 
     &__text { 
-        font-size: 1.25rem;
-        line-height: 1.75rem;
+        @include footer__text;
         font-weight: 400;
 
         @include tablet {
@@ -100,14 +112,27 @@
         
     }
 
+    &__mailto {
+        color: $color-foreground-light;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
     &__logo {
         margin: 4rem 0 2rem;
 
         @include tablet {
             position: absolute;
-            top: 4rem;
+            top: 3rem;
             right: 3rem;
+        }
 
+        @include desktop {
+            top: 2.5rem;
+            right: 6rem;
         }
     }
 }
