@@ -1,0 +1,7 @@
+@use './partials/global' as *;
+@use './partials/variables' as *;
+@use './partials/mixins' as *;
+
+.audio-player {
+    width: 50%;
+}

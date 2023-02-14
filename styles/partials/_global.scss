@@ -3,6 +3,7 @@
 @use './fonts' as *;
 @use './footer' as *;
 @use './header' as *;
+@use './hero' as *;
 
 *,
 *::before,
@@ -12,3 +13,4 @@
     box-sizing: border-box;
     font-family: 'AvenirNext LT Pro';
 }
+

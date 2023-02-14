@@ -20,7 +20,7 @@
   font-display: swap;
 }
 .footer {
-  padding: 3rem 1rem;
+  padding: 1.5rem 1rem;
   background-color: #323232;
   color: #fafafa;
 }
@@ -48,7 +48,7 @@
   }
 }
 .footer__heading {
-  font-size: 3.5rem;
+  font-size: 1.5rem;
   font-weight: 600;
 }
 @media (min-width: 768px) {
@@ -59,7 +59,7 @@
 .footer__icons {
   display: flex;
   width: 50%;
-  gap: 4rem;
+  gap: 2rem;
 }
 @media (min-width: 768px) {
   .footer__icons {
@@ -67,9 +67,9 @@
   }
 }
 .footer__icon {
-  margin: 2rem 0;
-  width: 3rem;
-  height: 3rem;
+  margin: 1rem 0;
+  width: 1.5rem;
+  height: 1.5rem;
   color: #323232;
 }
 @media (min-width: 768px) {
@@ -90,7 +90,7 @@
   }
 }
 .footer__section {
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 @media (min-width: 768px) {
   .footer__section {
@@ -98,7 +98,7 @@
   }
 }
 .footer__column:last-of-type {
-  margin-bottom: 6rem;
+  margin-bottom: 3rem;
 }
 @media (min-width: 768px) {
   .footer__column:last-of-type {
@@ -106,8 +106,9 @@
   }
 }
 .footer__subheading {
-  line-height: 1.5rem;
-  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 600;
 }
 @media (min-width: 768px) {
   .footer__subheading {
@@ -115,7 +116,8 @@
   }
 }
 .footer__text {
-  line-height: 1.5rem;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
   font-weight: 400;
 }
 @media (min-width: 768px) {
@@ -148,9 +150,8 @@
 }
 
 .logo__bandsite {
-  height: 3rem;
-  line-height: 2rem;
-  margin: 1rem 0;
+  height: 1.25rem;
+  margin: 0.5rem 0;
 }
 @media (min-width: 768px) {
   .logo__bandsite {
@@ -168,7 +169,7 @@
   flex-direction: column;
   background-color: #323232;
   align-items: center;
-  padding-top: 1rem;
+  padding-top: 0.25rem;
   font-weight: normal;
 }
 @media (min-width: 768px) {
@@ -200,10 +201,10 @@
 .header__button {
   color: #e1e1e1;
   text-decoration: none;
-  padding: 1rem;
+  padding-bottom: 1rem;
   width: 50%;
   text-align: center;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.375rem;
   border-bottom: 4px solid transparent;
@@ -230,21 +231,12 @@
   border-bottom: 4px solid #fff;
 }
 
-*,
-*::before,
-*::after {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "AvenirNext LT Pro";
-}
-
 .hero {
   background-image: url(../assets/images/hero-bio.jpg);
   background-position: center;
   background-size: cover;
   background-color: rgba(50, 50, 50, 0.5);
-  height: 30rem;
+  height: 12rem;
   width: 100%;
   display: flex;
   align-items: center;
@@ -257,8 +249,8 @@
 }
 .hero__heading {
   padding: 0 1rem;
-  color: #e1e1e1;
-  font-size: 3rem;
+  color: #fff;
+  font-size: 1.5rem;
   font-weight: 600;
   z-index: 1;
 }
@@ -279,13 +271,22 @@
   top: 0;
   left: 0;
   z-index: 1;
-  height: 30rem;
+  height: 12rem;
   width: 100%;
 }
 @media (min-width: 1280px) {
   .hero__overlay {
     height: 35rem;
   }
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "AvenirNext LT Pro";
 }
 
 .about {
@@ -306,10 +307,10 @@
   }
 }
 .about__heading {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: 600;
   line-height: 2rem;
-  padding: 1.5rem 0;
+  padding: 0.25rem 0;
   align-self: flex-start;
 }
 .about__container {
@@ -349,9 +350,9 @@
 }
 .about__quote {
   font-weight: 600;
-  font-size: 1.5rem;
-  line-height: 2.5rem;
-  padding-bottom: 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  padding-bottom: 0.5rem;
   align-self: flex-start;
 }
 @media (min-width: 768px) {
@@ -374,9 +375,9 @@
 }
 .about__subheading {
   line-height: 1.375rem;
-  font-size: 1.375rem;
+  font-size: 1rem;
   font-weight: 600;
-  padding: 2rem 0;
+  padding: 1rem 0;
   align-self: flex-start;
 }
 @media (min-width: 1280px) {
@@ -390,9 +391,9 @@
   }
 }
 .about__paragraph {
-  font-size: 1.375rem;
+  font-size: 0.75rem;
   font-weight: 400;
-  line-height: 2.25rem;
+  line-height: 1.25rem;
   padding-bottom: 1rem;
 }
 @media (min-width: 768px) {
@@ -409,7 +410,7 @@
 
 .gallery {
   background-color: #fafafa;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 @media (min-width: 768px) {
   .gallery {
@@ -436,7 +437,7 @@
 }
 .gallery__heading {
   color: #323232;
-  font-size: 3rem;
+  font-size: 1.5rem;
   font-weight: 600;
   padding: 1rem 0;
 }

@@ -1,1 +1,294 @@
-/*# sourceMappingURL=shows.css.map */
+@font-face {
+  font-family: "AvenirNext LT Pro";
+  src: url("../assets/fonts/AvenirNextLTPro-Regular.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Regular.woff") format("woff"), url("../assets/fonts/AvenirNextLTPro-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "AvenirNext LT Pro";
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Bold.woff") format("woff"), url("../assets/fonts/AvenirNextLTPro-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "AvenirNext LT Pro";
+  src: url("../assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Demi.woff") format("woff"), url("../assets/fonts/AvenirNextLTPro-Demi.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+.footer {
+  padding: 1.5rem 1rem;
+  background-color: #323232;
+  color: #fafafa;
+}
+@media (min-width: 768px) {
+  .footer {
+    padding: 2rem;
+    position: relative;
+  }
+}
+@media (min-width: 1280px) {
+  .footer {
+    padding: 1rem 6rem;
+  }
+}
+@media (min-width: 768px) {
+  .footer__row {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+  }
+}
+@media (min-width: 1280px) {
+  .footer__row {
+    gap: 6rem;
+  }
+}
+.footer__heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .footer__heading {
+    font-size: 2rem;
+  }
+}
+.footer__icons {
+  display: flex;
+  width: 50%;
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  .footer__icons {
+    gap: 1.5rem;
+  }
+}
+.footer__icon {
+  margin: 1rem 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #323232;
+}
+@media (min-width: 768px) {
+  .footer__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .footer__columns {
+    display: flex;
+    gap: 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .footer__columns {
+    gap: 5rem;
+  }
+}
+.footer__section {
+  margin: 1rem 0;
+}
+@media (min-width: 768px) {
+  .footer__section {
+    margin: 1rem 0;
+  }
+}
+.footer__column:last-of-type {
+  margin-bottom: 3rem;
+}
+@media (min-width: 768px) {
+  .footer__column:last-of-type {
+    margin-bottom: 2rem;
+  }
+}
+.footer__subheading {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .footer__subheading {
+    font-size: 0.875rem;
+  }
+}
+.footer__text {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+}
+@media (min-width: 768px) {
+  .footer__text {
+    font-size: 0.875rem;
+  }
+}
+.footer__mailto {
+  color: #e1e1e1;
+  text-decoration: none;
+}
+.footer__mailto:hover {
+  text-decoration: underline;
+}
+.footer__logo {
+  margin: 4rem 0 2rem;
+}
+@media (min-width: 768px) {
+  .footer__logo {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+  }
+}
+@media (min-width: 1280px) {
+  .footer__logo {
+    top: 2.5rem;
+    right: 6rem;
+  }
+}
+
+.logo__bandsite {
+  height: 1.25rem;
+  margin: 0.5rem 0;
+}
+@media (min-width: 768px) {
+  .logo__bandsite {
+    height: 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .logo__bandsite {
+    height: 1rem;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  background-color: #323232;
+  align-items: center;
+  padding-top: 0.25rem;
+  font-weight: normal;
+}
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    padding: 0 3rem;
+  }
+}
+@media (min-width: 1280px) {
+  .header {
+    padding: 0 6rem;
+  }
+}
+.header__buttons {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .header__buttons {
+    width: 40%;
+  }
+}
+@media (min-width: 1280px) {
+  .header__buttons {
+    width: 30%;
+  }
+}
+.header__button {
+  color: #e1e1e1;
+  text-decoration: none;
+  padding-bottom: 1rem;
+  width: 50%;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.375rem;
+  border-bottom: 4px solid transparent;
+  transition: all 0.3s ease;
+}
+@media (min-width: 768px) {
+  .header__button {
+    padding: 2rem 0;
+    width: auto;
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .header__button {
+    font-size: 0.875rem;
+  }
+}
+.header__button--active {
+  border-bottom: 4px solid #e1e1e1;
+  font-weight: bold;
+}
+.header__button:hover, .header__button:active {
+  color: #fff;
+  border-bottom: 4px solid #fff;
+}
+
+.hero {
+  background-image: url(../assets/images/hero-bio.jpg);
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(50, 50, 50, 0.5);
+  height: 12rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+@media (min-width: 1280px) {
+  .hero {
+    height: 35rem;
+  }
+}
+.hero__heading {
+  padding: 0 1rem;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  z-index: 1;
+}
+@media (min-width: 768px) {
+  .hero__heading {
+    padding: 0 3rem;
+    font-size: 4rem;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__heading {
+    padding: 0 6rem;
+  }
+}
+.hero__overlay {
+  background-color: rgba(50, 50, 50, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 12rem;
+  width: 100%;
+}
+@media (min-width: 1280px) {
+  .hero__overlay {
+    height: 35rem;
+  }
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "AvenirNext LT Pro";
+}
+
+.audio-player {
+  width: 50%;
+}/*# sourceMappingURL=shows.css.map */

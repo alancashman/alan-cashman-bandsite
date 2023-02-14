@@ -3,57 +3,6 @@
 @use './partials/mixins' as *;
 
 
-// HERO
-
-.hero {
-    background-image: url(../assets/images/hero-bio.jpg);
-    background-position: center;
-    background-size: cover;
-    background-color: rgba(50, 50, 50, 0.5);
-    height: 30rem;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    position: relative;
-
-    @include desktop {
-        height: 35rem;
-    }
-    
-
-    &__heading {
-        padding: 0 1rem;
-        color: $color-foreground-light;
-        font-size: 3rem;
-        font-weight: 600;
-        z-index: 1;
-
-        @include tablet {
-            padding: $tablet-padding;
-            font-size: 4rem;
-        }
-
-        @include desktop {
-            padding: $desktop-padding;
-        }
-
-    }
-
-    &__overlay {
-        background-color: rgba(50,50,50,0.5);
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        height: 30rem;
-        width: 100%;
-
-        @include desktop {
-            height: 35rem;
-        }
-    }
-}
-
 // ABOUT
 
 .about {
@@ -73,10 +22,10 @@
 
 
     &__heading {
-        font-size: 2.5rem;
+        font-size: 1.5rem;
         font-weight: 600;
         line-height: 2rem;
-        padding: 1.5rem 0;
+        padding: .25rem 0;
         align-self: flex-start;
     }
 
@@ -117,9 +66,9 @@
 
     &__quote {
         font-weight: 600;
-        font-size: 1.5rem;
-        line-height: 2.5rem;
-        padding-bottom: 1.5rem;
+        font-size: .875rem;
+        line-height: 1.5rem;
+        padding-bottom: .5rem;
         align-self: flex-start;
 
         @include tablet {
@@ -145,9 +94,9 @@
 
     &__subheading {
         line-height: 1.375rem;
-        font-size: 1.375rem;
+        font-size: 1rem;
         font-weight: 600;
-        padding: 2rem 0;
+        padding: 1rem 0;
         align-self: flex-start;
 
         @include desktop {
@@ -162,9 +111,9 @@
     }
 
     &__paragraph {
-        font-size: 1.375rem;
+        font-size: .75rem;
         font-weight: 400;
-        line-height: 2.25rem;
+        line-height: 1.25rem;
         padding-bottom: 1rem;
 
         @include tablet {
@@ -183,7 +132,7 @@
 
 .gallery {
     background-color: $color-foreground-lightest;
-    padding: 1rem;
+    padding: .5rem;
 
     @include tablet {
         padding: 2rem
@@ -208,7 +157,7 @@
 
     &__heading {
         color: $color-background;
-        font-size: 3rem;
+        font-size: 1.5rem;
         font-weight: 600;
         padding: 1rem 0;
     }
