@@ -2,6 +2,127 @@
 @use './partials/variables' as *;
 @use './partials/mixins' as *;
 
-.audio-player {
-    width: 50%;
+// HERO
+
+.hero {
+    background-image: url(../assets/images/hero-shows.jpg);
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(50, 50, 50, 0.5);
+    height: 17rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem 1rem;
+    
+    position: relative;
+
+    @include desktop {
+        height: 35rem;
+    }
+    
+&__subheading {
+    color: $color-white;
+    font-size: .875rem;
+    font-weight: 400;
+    z-index: 1;
 }
+
+    &__heading {
+        color: $color-white;
+        font-size: 1.375rem;
+        font-weight: 600;
+        z-index: 1;
+        width: 70%;
+
+        @include tablet {
+            padding: $tablet-padding;
+            font-size: 4rem;
+        }
+
+        @include desktop {
+            padding: $desktop-padding;
+        }
+
+    }
+
+    &__overlay {
+        background-color: rgba(50,50,50,0.5);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        height: 12rem;
+        width: 100%;
+
+        @include desktop {
+            height: 35rem;
+        }
+    }
+}
+
+.audio-player {
+    z-index: 1;
+    height: 40%;
+}
+
+// SHOWS SECTION
+
+.shows {
+    padding: 1rem;
+
+    &__heading {
+        font-size: 1.375rem;
+        font-weight: 600;
+        margin: 1rem 0;
+    }
+
+    &__list {
+        list-style-type: none;
+    }
+
+    &__item {
+        padding: 0.5rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-bottom: 1px solid $color-foreground-light;
+    }
+
+    &__info {
+        margin: .25rem 0;
+    }
+
+    &__subheading {
+        text-transform: uppercase;
+        color: $color-foreground;
+        font-weight: 400;
+        
+    }
+
+    &__text {
+        padding: .5rem 0;
+        font-size: .75rem;
+        color: $color-background-dark;
+
+        &--date {
+            font-weight: 600;
+        }
+    }
+
+    &__button {
+        margin: .5rem 0;
+        text-decoration: none;
+        color: $color-white;
+        background-color: $color-background;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 2.5rem;
+        border-radius: 4px;
+    }
+}
+
+
