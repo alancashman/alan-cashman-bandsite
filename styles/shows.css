@@ -364,6 +364,7 @@
 }
 .shows__info {
   margin: 0.25rem 0;
+  width: 30%;
 }
 .shows__subheading {
   text-transform: uppercase;
@@ -397,6 +398,7 @@
   text-transform: uppercase;
   font-size: 0.875rem;
   font-weight: 600;
+  margin-bottom: 1rem;
 }
 @media (min-width: 768px) {
   .shows__button {

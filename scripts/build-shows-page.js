@@ -36,3 +36,82 @@ const showsArray = [
         location: 'San Francisco, CA'
     }
 ]
+
+
+function populateShowsList() {
+    // Get show list <ul> element
+    const showsList = document.querySelector('.shows__list')
+
+    // Loop through showsArray
+    for(let i = 0; i < showsArray.length; i++) {
+        // Create list item
+        const showEl = document.createElement('li');
+        showEl.classList.add('shows__item')
+
+        // Create date section
+        const showDateSection = document.createElement('div')
+        showDateSection.classList.add('shows__info')
+
+            // Populate date section
+            const dateHeaderEl = document.createElement('h5');
+            dateHeaderEl.innerText = 'Date'
+            dateHeaderEl.classList.add('shows__subheading')
+
+            const dateEl = document.createElement('p');
+            dateEl.innerText = showsArray[i].date;
+            dateEl.classList.add('shows__text--date')
+            dateEl.classList.add('shows__text')
+
+            showDateSection.appendChild(dateHeaderEl)
+            showDateSection.appendChild(dateEl);
+
+        // Create venue section
+        const showVenueSection = document.createElement('div');
+        showVenueSection.classList.add('shows__info')
+
+            // Populate venue section
+            const venueHeaderEl = document.createElement('h5');
+            venueHeaderEl.innerText = 'Venue';
+            venueHeaderEl.classList.add('shows__subheading')
+
+            const venueEl = document.createElement('p')
+            venueEl.innerText = showsArray[i].venue
+            venueEl.classList.add('shows__text')
+
+            showVenueSection.appendChild(venueHeaderEl);
+            showVenueSection.appendChild(venueEl)
+
+        // Create location section
+        const showLocationSection = document.createElement('div');
+        showLocationSection.classList.add('shows__info')
+
+            // Populate location section
+            const locationHeaderEl = document.createElement('h5');
+            locationHeaderEl.innerText = 'Location'
+            locationHeaderEl.classList.add('shows__subheading');
+
+            const locationEl = document.createElement('p');
+            locationEl.innerText = showsArray[i].location;
+            locationEl.classList.add('shows__text')
+
+            showLocationSection.appendChild(locationHeaderEl);
+            showLocationSection.appendChild(locationEl)
+
+        // Create 'Buy Tickets' button
+        const ticketsButtonEl = document.createElement('a');
+        ticketsButtonEl.innerText = 'Buy Tickets';
+        ticketsButtonEl.classList.add('shows__button')
+
+        // Append show data to <li>
+        showEl.appendChild(showDateSection);
+        showEl.appendChild(showVenueSection);
+        showEl.appendChild(showLocationSection)/
+        showEl.appendChild(ticketsButtonEl)
+    
+    // Append <li> to showsList <ul>
+    showsList.appendChild(showEl)
+
+    }
+}
+
+populateShowsList();

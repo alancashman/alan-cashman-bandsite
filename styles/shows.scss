@@ -134,6 +134,7 @@
 
     &__info {
         margin: .25rem 0;
+        width: 30%;
     }
 
     &__subheading {
@@ -171,6 +172,7 @@
         text-transform: uppercase;
         font-size: .875rem;
         font-weight: 600;
+        margin-bottom: 1rem;
 
         @include tablet {
             width: auto;
