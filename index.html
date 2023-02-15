@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BandSite - The Bees Knees</title>
     <link rel="stylesheet" href="./styles/bio.css">
+    <script src="./scripts/index-page.js" defer></script>
 </head>
 <body>
 
@@ -75,20 +76,33 @@
 <section class="comments">
     <h3 class="comments__heading">Join the Conversation</h3>
     <form action="#" class="comments-form">
-        <div class="comments-form__comment">
-            <img src="./assets/images/Mohan-muruge.jpg" alt="" class="comments-form__img">
-            <input type="text" placeholder="Enter your name" name="name" class="comments-form__name">
-            <label for="name">Name</label>
-            <input type="text" placeholder="Add a new comment" class="comments-form__comment">
+        <div class="comments-form__left">
+            <img src="./assets/images/Mohan-muruge.jpg" alt="" class="comment__img">
+        </div>
+        <div class="comments-form__right">
+            <div class="comments-form__section">
+                <label for="name" class="comments-form__label">Name</label>
+                <input type="text" placeholder="Enter your name" name="name" class="comments-form__name comments-form__field">
+            </div>
+            <div class="comments-form__section">
+                <label for="comment" class="comments-form__label">Comment</label>
+                <input type="text" placeholder="Add a new comment" name="comment" class="comments-form__comment comments-form__field">
+            </div>
             <button class="comments-form__button">Comment</button>
         </div>
     </form>
-    <div class="comment">
-        <img src="" alt="user" class="comment__img">
-        <h5 class="comment__name">Connor Walton</h5>
-        <p class="comment__date">02/17/2021</p>
-        <p class="comment__text">This is art.  This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence.  Let us appreciate this for what it is and what it contains.</p>
-    </div>
+    <ul class="comments-list">
+        <div class="comment">
+            <div class="comment__left">
+                <img src="#" alt="user" class="comment__img">
+            </div>
+            <div class="comment__right">
+                <h5 class="comment__name">Connor Walton</h5>
+                <p class="comment__date">02/17/2021</p>
+                <p class="comment__text">This is art.  This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence.  Let us appreciate this for what it is and what it contains.</p>
+            </div>
+        </div>
+    </ul>
 </section>
 
 <!-- FOOTER SECTION -->

@@ -155,7 +155,7 @@
 }
 @media (min-width: 768px) {
   .logo__bandsite {
-    height: 1.5rem;
+    height: 1.25rem;
   }
 }
 @media (min-width: 1280px) {
@@ -175,7 +175,7 @@
 @media (min-width: 768px) {
   .header {
     flex-direction: row;
-    padding: 0 3rem;
+    padding: 0 2rem;
   }
 }
 @media (min-width: 1280px) {
@@ -211,9 +211,9 @@
 }
 @media (min-width: 768px) {
   .header__button {
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     width: auto;
-    font-size: 1rem;
+    font-size: 0.875rem;
   }
 }
 @media (min-width: 1280px) {
@@ -249,31 +249,47 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1.5rem 1rem;
+  padding: 1rem;
   position: relative;
+}
+@media (min-width: 768px) {
+  .hero {
+    height: 31rem;
+  }
 }
 @media (min-width: 1280px) {
   .hero {
     height: 35rem;
   }
 }
+.hero__text {
+  z-index: 3;
+}
 .hero__subheading {
   color: #fff;
   font-size: 0.875rem;
   font-weight: 400;
-  z-index: 1;
+  margin: 1rem 0;
+}
+@media (min-width: 768px) {
+  .hero__subheading {
+    padding: 0 2rem;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
 }
 .hero__heading {
   color: #fff;
   font-size: 1.375rem;
   font-weight: 600;
-  z-index: 1;
   width: 70%;
 }
 @media (min-width: 768px) {
   .hero__heading {
-    padding: 0 3rem;
-    font-size: 4rem;
+    margin-top: 0;
+    padding: 0 2rem;
+    font-size: 3.25rem;
   }
 }
 @media (min-width: 1280px) {
@@ -290,6 +306,11 @@
   height: 12rem;
   width: 100%;
 }
+@media (min-width: 768px) {
+  .hero__overlay {
+    height: 31rem;
+  }
+}
 @media (min-width: 1280px) {
   .hero__overlay {
     height: 35rem;
@@ -300,24 +321,46 @@
   z-index: 1;
   height: 40%;
 }
-
-.shows {
-  padding: 1rem;
+@media (min-width: 768px) {
+  .audio-player {
+    height: 30%;
+    width: 60%;
+    padding-left: 2rem;
+  }
 }
+
 .shows__heading {
+  padding: 1rem 1rem;
   font-size: 1.375rem;
   font-weight: 600;
-  margin: 1rem 0;
+  margin-top: 0.5rem;
+}
+@media (min-width: 768px) {
+  .shows__heading {
+    padding: 2rem;
+    font-size: 2rem;
+  }
 }
 .shows__list {
   list-style-type: none;
 }
 .shows__item {
-  padding: 0.5rem 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   border-bottom: 1px solid #e1e1e1;
+  margin: 1rem;
+}
+.shows__item:hover {
+  background-color: #fafafa;
+}
+.shows__item:active {
+  background-color: #e1e1e1;
+}
+@media (min-width: 768px) {
+  .shows__item {
+    flex-direction: row;
+  }
 }
 .shows__info {
   margin: 0.25rem 0;
@@ -327,9 +370,14 @@
   color: #afafaf;
   font-weight: 400;
 }
+@media (min-width: 768px) {
+  .shows__subheading {
+    padding-bottom: 1rem;
+  }
+}
 .shows__text {
   padding: 0.5rem 0;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   color: #000000;
 }
 .shows__text--date {
@@ -346,4 +394,13 @@
   width: 100%;
   height: 2.5rem;
   border-radius: 4px;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .shows__button {
+    width: auto;
+    padding: 0 2rem;
+  }
 }/*# sourceMappingURL=shows.css.map */

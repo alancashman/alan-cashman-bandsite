@@ -8,7 +8,7 @@
     margin: 0.5rem 0;
 
     @include tablet {
-        height: 1.5rem;
+        height: 1.25rem;
     }
 
     @include desktop {
@@ -62,9 +62,9 @@
         transition: all .3s ease;
 
         @include tablet {
-            padding: 2rem 0;
+            padding: 1.5rem 0;
             width: auto;
-            font-size: 1rem;
+            font-size: .875rem;
         }
 
         @include desktop {
