@@ -68,7 +68,7 @@
         top: 0;
         left: 0;
         z-index: 1;
-        height: 12rem;
+        height: 17rem;
         width: 100%;
 
         @include tablet {
@@ -129,12 +129,17 @@
 
         @include tablet {
             flex-direction: row;
+            align-items: center;
         }
     }
 
     &__info {
         margin: .25rem 0;
-        width: 30%;
+        // width: 25%;
+
+        @include tablet {
+            width: 20%;
+        }
     }
 
     &__subheading {
@@ -150,11 +155,12 @@
 
     &__text {
         padding: .5rem 0;
-        font-size: .875rem;
+        font-size: .75rem;
         color: $color-background-dark;
 
         &--date {
             font-weight: 600;
+            color: $color-background;
         }
     }
 
@@ -172,7 +178,7 @@
         text-transform: uppercase;
         font-size: .875rem;
         font-weight: 600;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
 
         @include tablet {
             width: auto;

@@ -82,11 +82,11 @@
         <div class="comments-form__right">
             <div class="comments-form__section">
                 <label for="name" class="comments-form__label">Name</label>
-                <input type="text" placeholder="Enter your name" name="name" class="comments-form__name comments-form__field">
+                <input type="text" id="name" placeholder="Enter your name" name="name" class="comments-form__field">
             </div>
             <div class="comments-form__section">
                 <label for="comment" class="comments-form__label">Comment</label>
-                <input type="text" placeholder="Add a new comment" name="comment" class="comments-form__comment comments-form__field">
+                <input type="textarea" id="comment" placeholder="Add a new comment" name="comment" class="comments-form__field">
             </div>
             <button class="comments-form__button">Comment</button>
         </div>
@@ -97,8 +97,10 @@
                 <img src="#" alt="user" class="comment__img">
             </div>
             <div class="comment__right">
-                <h5 class="comment__name">Connor Walton</h5>
-                <p class="comment__date">02/17/2021</p>
+                <div class="comment__header-row">
+                    <h5 class="comment__name">Connor Walton</h5>
+                    <p class="comment__date">02/17/2021</p>
+                </div>
                 <p class="comment__text">This is art.  This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence.  Let us appreciate this for what it is and what it contains.</p>
             </div>
         </div>

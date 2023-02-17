@@ -1,7 +1,7 @@
 const showsArray = [
     {
         id: 0,
-        date: 'Mon May 06 2021',
+        date: 'Mon Sept 06 2021',
         venue: 'Ronald Lane',
         location: 'San Francisco, CA'
     },
@@ -53,7 +53,7 @@ function populateShowsList() {
         showDateSection.classList.add('shows__info')
 
             // Populate date section
-            const dateHeaderEl = document.createElement('h5');
+            const dateHeaderEl = document.createElement('h6');
             dateHeaderEl.innerText = 'Date'
             dateHeaderEl.classList.add('shows__subheading')
 
@@ -70,7 +70,7 @@ function populateShowsList() {
         showVenueSection.classList.add('shows__info')
 
             // Populate venue section
-            const venueHeaderEl = document.createElement('h5');
+            const venueHeaderEl = document.createElement('h6');
             venueHeaderEl.innerText = 'Venue';
             venueHeaderEl.classList.add('shows__subheading')
 
@@ -86,7 +86,7 @@ function populateShowsList() {
         showLocationSection.classList.add('shows__info')
 
             // Populate location section
-            const locationHeaderEl = document.createElement('h5');
+            const locationHeaderEl = document.createElement('h6');
             locationHeaderEl.innerText = 'Location'
             locationHeaderEl.classList.add('shows__subheading');
 
