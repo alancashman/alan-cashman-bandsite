@@ -259,7 +259,7 @@
 }
 @media (min-width: 1280px) {
   .hero {
-    height: 35rem;
+    height: 39rem;
   }
 }
 .hero__text {
@@ -313,7 +313,7 @@
 }
 @media (min-width: 1280px) {
   .hero__overlay {
-    height: 35rem;
+    height: 39rem;
   }
 }
 

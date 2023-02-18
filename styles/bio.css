@@ -257,7 +257,7 @@
 }
 @media (min-width: 1280px) {
   .hero {
-    height: 35rem;
+    height: 39rem;
   }
 }
 .hero__heading {
@@ -294,7 +294,7 @@
 }
 @media (min-width: 1280px) {
   .hero__overlay {
-    height: 35rem;
+    height: 39rem;
   }
 }
 
@@ -312,7 +312,7 @@
 }
 @media (min-width: 1280px) {
   .about {
-    padding: 2rem 6rem;
+    padding: 2rem 8rem;
   }
 }
 .about__heading {
@@ -359,7 +359,7 @@
 }
 @media (min-width: 1280px) {
   .about__img {
-    height: 40vw;
+    height: 37.5vw;
   }
 }
 .about__quote {
@@ -388,8 +388,8 @@
 @media (min-width: 1280px) {
   .about__quote {
     width: 75%;
-    font-size: 1.5rem;
-    line-height: 2.5rem;
+    font-size: 1.25rem;
+    line-height: 2rem;
   }
   .about__quote:last-of-type {
     font-size: 1rem;
@@ -445,7 +445,7 @@
 }
 @media (min-width: 1280px) {
   .gallery {
-    padding: 3rem 6rem;
+    padding: 3rem 8rem;
   }
 }
 @media (min-width: 768px) {
@@ -515,9 +515,21 @@
     padding: 3rem 2rem;
   }
 }
+@media (min-width: 1280px) {
+  .comments__heading {
+    padding: 3rem 8rem;
+  }
+}
 @media (min-width: 768px) {
   .comments {
-    padding: 0rem 6.5rem;
+    padding: 0 6.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .comments {
+    padding: 0 8rem;
+    width: 60%;
+    margin: 0 auto;
   }
 }
 
@@ -629,4 +641,10 @@
   padding-top: 0.5rem;
   font-size: 0.75rem;
   line-height: 1.1375rem;
+}
+@media (min-width: 1280px) {
+  .comment__text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
 }/*# sourceMappingURL=bio.css.map */
