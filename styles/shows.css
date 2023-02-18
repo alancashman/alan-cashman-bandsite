@@ -361,6 +361,10 @@
   .shows__item {
     flex-direction: row;
     align-items: center;
+    padding-bottom: 1rem;
+  }
+  .shows__item:not(:first-child) .shows__subheading {
+    display: none;
   }
 }
 .shows__info {

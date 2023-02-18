@@ -130,7 +130,15 @@
         @include tablet {
             flex-direction: row;
             align-items: center;
+            padding-bottom: 1rem;
+        &:not(:first-child){
+            
+            .shows__subheading {
+                display: none;
+            }
         }
+        }
+        
     }
 
     &__info {
@@ -149,6 +157,8 @@
 
         @include tablet {
             padding-bottom: 1rem;
+
+            
         }
         
     }
