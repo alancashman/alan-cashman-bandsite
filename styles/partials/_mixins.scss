@@ -5,10 +5,19 @@
 }
 
 @mixin avatar {
+    
     width: 2.25rem;
     height: 2.25rem;
     border-radius: 50%;
+    // background-image: url('../../assets/images/Mohan-muruge.jpg');
+    background-position: left;
+    background-size: cover;
     background-color: $color-foreground-light;
+
+    @include tablet {
+        width: 3rem;
+        height: 3rem;
+    }
 }
 
 @mixin tablet {

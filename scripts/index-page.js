@@ -18,58 +18,11 @@ const commentsArray = [
 
 
 const commentsListEl = document.querySelector('.comments-list')
+const formEl = document.querySelector('.comments-form');
 
-function loadComments() {
-    for(let i = 0; i < commentsArray.length; i++) {
-        // Create comment element
-        const commentEl = document.createElement('li')
-        commentEl.classList.add('comment');
-       
-
-        // Create left side of comment element content
-        const commentLeftEl = document.createElement('div');
-        commentLeftEl.classList.add('comment__left');
-        commentEl.appendChild(commentLeftEl)
-
-            // Add comment image
-            const commentImg = document.createElement('img');
-            commentImg.classList.add('comment__img');
-            commentLeftEl.appendChild(commentImg)
-
-        // Create right side of comment element content
-        const commentRightEl = document.createElement('div');
-        commentRightEl.classList.add('comment__right');
-        commentEl.appendChild(commentRightEl)
-
-        // Create header-row for right side of comment element
-        const commentRightHeader = document.createElement('div')
-        commentRightHeader.classList.add('comment__header-row')
-        commentRightEl.appendChild(commentRightHeader)
-
-            // Add comment name
-            const commentNameEl = document.createElement('h5');
-            commentNameEl.innerText = commentsArray[i].name
-            commentNameEl.classList.add('comment__name')
-            commentRightHeader.appendChild(commentNameEl)
-
-            // Add comment date
-            const commentDateEl = document.createElement('p');
-            commentDateEl.innerText = commentsArray[i].date;
-            commentDateEl.classList.add('comment__date')
-            commentRightHeader.appendChild(commentDateEl)
-
-            // Add comment body
-            const commentTextEl = document.createElement('p');
-            commentTextEl.innerText = commentsArray[i].commentText;
-            commentTextEl.classList.add('comment__text')
-            commentRightEl.appendChild(commentTextEl)
-
-        // Append comment <li> to comments <ul>
-        commentsListEl.prepxend(commentEl)
-    }
-}
 
 function loadComment(comment) {
+    
      // Create comment element
      const commentEl = document.createElement('li')
      commentEl.classList.add('comment');
@@ -118,21 +71,34 @@ function loadComment(comment) {
 
 }
 
-const formEl = document.querySelector('.comments-form');
+const formNameField = document.querySelector('.comments-form__field--name')
+const formCommentField = document.querySelector('.comments-form__field--comment')
 
 formEl.addEventListener('submit', (e) => {
     e.preventDefault();
+    commentsListEl.innerText = '';
+
+    // if (e.target.name.value === "" ) {
+    //     formNameField.classList.add("comments-form__field--name--invalid")
+    //     formNameField.setAttribute("placeholder", 'No!  Need a name! ')
+    //     return
+    // }
 
     const comment = {
         name: e.target.name.value,
         date: new Date(Date.now()).toLocaleDateString('en-us'),
         commentText: e.target.comment.value
     }
+    e.target.reset();
 
     commentsArray.push(comment)
-    loadComment(comment);
+    for(let i = 0; i < commentsArray.length; i++) {
+        loadComment(commentsArray[i]);
+    }
+
 })
 
+// Initialize comments on page load 
 for(let i = 0; i < commentsArray.length; i++ ) {
     loadComment(commentsArray[i])
 }
