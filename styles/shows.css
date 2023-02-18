@@ -350,6 +350,7 @@
   justify-content: space-between;
   border-bottom: 1px solid #e1e1e1;
   margin: 1rem;
+  padding: 1rem;
 }
 .shows__item:hover {
   background-color: #fafafa;
@@ -357,11 +358,17 @@
 .shows__item:active {
   background-color: #e1e1e1;
 }
+.shows__item--selected {
+  background-color: #e1e1e1;
+}
+.shows__item--selected:hover {
+  background-color: #e1e1e1;
+}
 @media (min-width: 768px) {
   .shows__item {
     flex-direction: row;
     align-items: center;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
   }
   .shows__item:not(:first-child) .shows__subheading {
     display: none;

@@ -118,6 +118,7 @@
         justify-content: space-between;
         border-bottom: 1px solid $color-foreground-light;
         margin: 1rem;
+        padding: 1rem;
 
         &:hover {
             background-color: #fafafa;
@@ -127,16 +128,26 @@
             background-color: #e1e1e1;
         }
 
+        &--selected {
+            background-color: $color-foreground-light;
+
+            &:hover {
+                background-color: $color-foreground-light;
+            }
+        }
+
         @include tablet {
             flex-direction: row;
             align-items: center;
-            padding-bottom: 1rem;
-        &:not(:first-child){
+            padding-bottom: .5rem;
             
-            .shows__subheading {
-                display: none;
+            &:not(:first-child) {
+                
+            
+                .shows__subheading {
+                    display: none;
+                }
             }
-        }
         }
         
     }

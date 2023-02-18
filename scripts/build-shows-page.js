@@ -115,3 +115,14 @@ function populateShowsList() {
 }
 
 populateShowsList();
+
+let showEls = document.querySelectorAll('.shows__item')
+
+for(let i = 0; i < showEls.length; i++) {
+    showEls[i].addEventListener('click', function () {
+        showEls.forEach(show => {
+            show.classList.remove('shows__item--selected')
+        })
+        showEls[i].classList.toggle('shows__item--selected')
+    })
+}
