@@ -78,11 +78,11 @@ formEl.addEventListener('submit', (e) => {
     e.preventDefault();
     commentsListEl.innerText = '';
 
-    // if (e.target.name.value === "" ) {
-    //     formNameField.classList.add("comments-form__field--name--invalid")
-    //     formNameField.setAttribute("placeholder", 'No!  Need a name! ')
-    //     return
-    // }
+    if (e.target.name.value === "" ) {
+        formNameField.classList.add("comments-form__field--invalid")
+        // formNameField.setAttribute("placeholder", 'No!  Need a name! ')
+        return
+    }
 
     const comment = {
         name: e.target.name.value,

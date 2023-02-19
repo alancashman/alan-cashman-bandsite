@@ -178,6 +178,11 @@
     &__paragraph-container {
         @include tablet {
             display: flex;
+            gap: 1.5rem;
+        }
+
+        @include desktop {
+            gap: 3rem;
         }
     }
 
@@ -214,9 +219,11 @@
     }
 
     &__image-container {
+
         @include tablet {
             display: flex;
             justify-content: space-between;
+            align-content: space-between;
             flex-wrap: wrap;
             gap: 1.5rem;
         }
@@ -354,6 +361,10 @@
                 height: 5rem;
             }
         }
+
+        &--invalid {
+            border: 1px solid #d22d2d;
+        }
     }
 
     &__label {
@@ -387,7 +398,6 @@
 .comment {
     padding: 1rem 0;
     display: flex;
-    // justify-content: space-between;
     border-bottom: 1px solid $color-foreground-light;
 
     &__right {
@@ -426,10 +436,19 @@
         padding-top: .5rem;
         font-size: .75rem;
         line-height: 1.1375rem;
+        
 
         @include desktop {
             font-size: .875rem;
             line-height: 1.25rem;
+        }
+    }
+
+    &:last-of-type {
+        margin-bottom: 1rem;
+        
+        @include tablet { 
+            margin-bottom: 2rem;
         }
     }
 }

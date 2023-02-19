@@ -112,14 +112,13 @@
             font-size: .875rem;
         }
         
-    }
-
-    &__mailto {
-        color: $color-foreground-light;
-        text-decoration: none;
-
-        &:hover {
-            text-decoration: underline;
+        &--mailto {
+            color: $color-foreground-light;
+            text-decoration: none;
+    
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 
