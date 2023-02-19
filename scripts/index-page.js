@@ -75,23 +75,50 @@ const formNameField = document.querySelector('.comments-form__field--name')
 const formCommentField = document.querySelector('.comments-form__field--comment')
 
 formEl.addEventListener('submit', (e) => {
+    // Prevent form submission
     e.preventDefault();
+    // Clear existing comments
     commentsListEl.innerText = '';
 
+
+    // Form validation
     if (e.target.name.value === "" ) {
         formNameField.classList.add("comments-form__field--invalid")
-        // formNameField.setAttribute("placeholder", 'No!  Need a name! ')
+        formNameField.setAttribute("placeholder", 'Please input your name.')
+        commentsArray.forEach(comment => {
+            loadComment(comment)
+        })
         return
     }
 
+    if (e.target.comment.value === '') {
+        formCommentField.classList.add('comments-form__field--invalid')
+        formCommentField.setAttribute('placeholder', 'Please add a comment to be posted.')
+        commentsArray.forEach(comment => {
+            loadComment(comment)
+        })
+        return
+    }
+
+    else {
+        formNameField.classList.remove('comments-form__field--invalid')
+        formNameField.setAttribute("placeholder", 'Enter your name')
+        formCommentField.classList.remove('comments-form__field--invalid')
+        formCommentField.setAttribute('placeholder', 'Add a new comment')
+    }
+
+    // Build new comment object
     const comment = {
         name: e.target.name.value,
         date: new Date(Date.now()).toLocaleDateString('en-us'),
         commentText: e.target.comment.value
     }
+    // Clear form inputs
     e.target.reset();
 
+    // Push new comment to commentsArray
     commentsArray.push(comment)
+    // Loop through commentsArray and render to page
     for(let i = 0; i < commentsArray.length; i++) {
         loadComment(commentsArray[i]);
     }

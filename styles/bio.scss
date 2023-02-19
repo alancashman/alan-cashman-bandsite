@@ -351,7 +351,6 @@
         border: 1px solid $color-foreground;
         }
 
-
         @include tablet { 
             height: 3rem;
         }
@@ -363,7 +362,7 @@
         }
 
         &--invalid {
-            border: 1px solid #d22d2d;
+            border: 1px solid $color-error;
         }
     }
 
