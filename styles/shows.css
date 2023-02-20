@@ -378,9 +378,14 @@
 .shows__list {
   list-style-type: none;
 }
+@media (min-width: 768px) {
+  .shows__list {
+    padding-bottom: 2rem;
+  }
+}
 @media (min-width: 1280px) {
   .shows__list {
-    padding: 3.5rem 0;
+    padding: 3.5rem 0 2rem;
     width: 65%;
     justify-self: flex-end;
   }

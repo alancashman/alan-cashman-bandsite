@@ -132,8 +132,12 @@
     &__list {
         list-style-type: none;
 
+        @include tablet {
+            padding-bottom: 2rem;
+        }
+
         @include desktop {
-            padding: 3.5rem 0;
+            padding: 3.5rem 0 2rem;
             width: 65%;
             justify-self: flex-end;
         }
