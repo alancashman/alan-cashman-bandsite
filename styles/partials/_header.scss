@@ -16,6 +16,7 @@
     }
 }
 
+
 .header{ 
     display: flex;
     flex-direction: column;
@@ -69,6 +70,7 @@
 
         @include desktop {
             font-size: .875rem;
+            padding: 2rem 0;
             
         }
 

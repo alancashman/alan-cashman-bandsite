@@ -107,6 +107,7 @@
         font-size: .75rem;
         line-height: $footer-text-line-height;
         font-weight: 400;
+        
 
         @include tablet {
             font-size: .875rem;
@@ -118,6 +119,14 @@
     
             &:hover {
                 text-decoration: underline;
+            }
+        }
+
+        &--copyright {
+            font-size: .675rem;
+
+            @include tablet {
+                font-size: .875rem;
             }
         }
     }

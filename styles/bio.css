@@ -132,6 +132,14 @@
 .footer__text--mailto:hover {
   text-decoration: underline;
 }
+.footer__text--copyright {
+  font-size: 0.675rem;
+}
+@media (min-width: 768px) {
+  .footer__text--copyright {
+    font-size: 0.875rem;
+  }
+}
 .footer__logo {
   margin: 4rem 0 2rem;
 }
@@ -219,6 +227,7 @@
 @media (min-width: 1280px) {
   .header__button {
     font-size: 0.875rem;
+    padding: 2rem 0;
   }
 }
 .header__button--active {
@@ -519,7 +528,7 @@
 @media (min-width: 768px) {
   .comments__heading {
     font-size: 2rem;
-    padding: 3rem 2rem;
+    padding: 2rem;
   }
 }
 @media (min-width: 1280px) {
