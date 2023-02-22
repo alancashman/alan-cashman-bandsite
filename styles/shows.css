@@ -395,7 +395,7 @@
   flex-direction: column;
   justify-content: space-between;
   border-bottom: 1px solid #e1e1e1;
-  margin: 1rem;
+  padding: 1rem;
 }
 .shows__item:hover {
   background-color: #fafafa;
@@ -408,6 +408,9 @@
 }
 .shows__item--selected:hover {
   background-color: #e1e1e1;
+}
+.shows__item--selected:active {
+  background-color: #afafaf;
 }
 @media (min-width: 768px) {
   .shows__item {
@@ -467,6 +470,7 @@
   font-size: 0.875rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
+  cursor: pointer;
 }
 @media (min-width: 768px) {
   .shows__button {

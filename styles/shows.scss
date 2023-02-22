@@ -1,245 +1,241 @@
-@use './partials/global' as *;
-@use './partials/variables' as *;
-@use './partials/mixins' as *;
+@use "./partials/global" as *;
+@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
 
 // HERO
 
 .hero {
-    background-image: url(../assets/images/hero-shows.jpg);
-    background-position: center;
-    background-size: cover;
-    background-color: rgba(50, 50, 50, 0.5);
-    height: 17rem;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 1rem;
-    
-    position: relative;
+  background-image: url(../assets/images/hero-shows.jpg);
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(50, 50, 50, 0.5);
+  height: 17rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
 
-    @include tablet {
-        height: 31rem;
-    }
+  position: relative;
 
-    @include desktop {
-        height: 39rem;
-        flex-direction: row;
-        align-items: center;
-    }
+  @include tablet {
+    height: 31rem;
+  }
 
-    &__text {
-        z-index: 3;
-    }
+  @include desktop {
+    height: 39rem;
+    flex-direction: row;
+    align-items: center;
+  }
 
-&__subheading {
+  &__text {
+    z-index: 3;
+  }
+
+  &__subheading {
     color: $color-white;
-    font-size: .875rem;
+    font-size: 0.875rem;
     font-weight: 400;
     margin: 1rem 0;
 
     @include tablet {
-        padding: $tablet-padding;
-        margin-top: 2rem;
-        font-size: 1.5rem;
-        font-weight: 600;
+      padding: $tablet-padding;
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      font-weight: 600;
     }
 
     @include desktop {
-        padding: $desktop-padding;
+      padding: $desktop-padding;
     }
-}
+  }
 
-    &__heading {
-        color: $color-white;
-        font-size: 1.375rem;
-        font-weight: 600;
-        width: 70%;
+  &__heading {
+    color: $color-white;
+    font-size: 1.375rem;
+    font-weight: 600;
+    width: 70%;
 
-        @include tablet {
-            margin-top: 0;
-            padding: $tablet-padding;
-            font-size: 3.25rem;
-        }
-
-        @include desktop {
-            padding: $desktop-padding;
-            width: 100%;
-        }
-
+    @include tablet {
+      margin-top: 0;
+      padding: $tablet-padding;
+      font-size: 3.25rem;
     }
 
-    &__overlay {
-        background-color: rgba(50,50,50,0.5);
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        height: 17rem;
-        width: 100%;
-
-        @include tablet {
-            height: 31rem;
-        }
-
-        @include desktop {
-            height: 39rem;
-        }
+    @include desktop {
+      padding: $desktop-padding;
+      width: 100%;
     }
+  }
+
+  &__overlay {
+    background-color: rgba(50, 50, 50, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 17rem;
+    width: 100%;
+
+    @include tablet {
+      height: 31rem;
+    }
+
+    @include desktop {
+      height: 39rem;
+    }
+  }
 }
 
 .audio-player {
-    z-index: 1;
-    height: 40%;
+  z-index: 1;
+  height: 40%;
 
-    @include tablet {
-        height: 30%;
-        width: 60%;
-        padding-left: 2rem;
-    }
+  @include tablet {
+    height: 30%;
+    width: 60%;
+    padding-left: 2rem;
+  }
 
-    @include desktop {
-        width: 50%;
-        height: 25%;
-        margin-top: 4rem;
-    }
+  @include desktop {
+    width: 50%;
+    height: 25%;
+    margin-top: 4rem;
+  }
 }
 
 // SHOWS SECTION
 
 .shows {
+  @include desktop {
+    display: flex;
+  }
+
+  &__heading {
+    padding: 1rem 1rem 0;
+    font-size: 1.375rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+
+    @include tablet {
+      padding: 2rem;
+      font-size: 2rem;
+    }
 
     @include desktop {
-        display: flex;
+      padding: 2rem 8rem;
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+
+    @include tablet {
+      padding-bottom: 2rem;
     }
 
-    &__heading {
-        padding: 1rem 1rem 0;
-        font-size: 1.375rem;
-        font-weight: 600;
-        margin-top: .5rem;
+    @include desktop {
+      padding: 3.5rem 0 2rem;
+      width: 65%;
+      justify-self: flex-end;
+    }
+  }
 
-        @include tablet {
-            padding: 2rem;
-            font-size: 2rem;
-        }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: 1px solid $color-foreground-light;
+    padding: 1rem;
 
-        @include desktop {
-            padding: 2rem 8rem;
-        }
+    &:hover {
+      background-color: #fafafa;
     }
 
-    &__list {
-        list-style-type: none;
-
-        @include tablet {
-            padding-bottom: 2rem;
-        }
-
-        @include desktop {
-            padding: 3.5rem 0 2rem;
-            width: 65%;
-            justify-self: flex-end;
-        }
+    &:active {
+      background-color: #e1e1e1;
     }
 
-    &__item {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        border-bottom: 1px solid $color-foreground-light;
-        margin: 1rem;
-        // padding: 1rem;
+    &--selected {
+      background-color: $color-foreground-light;
 
-        &:hover {
-            background-color: #fafafa;
-        }   
+      &:hover {
+        background-color: $color-foreground-light;
+      }
 
-        &:active {
-            background-color: #e1e1e1;
-        }
-
-        &--selected {
-            background-color: $color-foreground-light;
-
-            &:hover {
-                background-color: $color-foreground-light;
-            }
-        }
-
-        @include tablet {
-            flex-direction: row;
-            align-items: center;
-            padding-bottom: .5rem;
-            margin: 0 1rem;
-            
-            &:not(:first-child) {
-                
-            
-                .shows__subheading {
-                    display: none;
-                }
-            }
-        }
-        
+      &:active {
+        background-color: $color-foreground;
+      }
     }
 
-    &__info {
-        margin: .25rem 0;
-        // width: 25%;
+    @include tablet {
+      flex-direction: row;
+      align-items: center;
+      padding-bottom: 0.5rem;
+      margin: 0 1rem;
 
-        @include tablet {
-            width: 20%;
+      &:not(:first-child) {
+        .shows__subheading {
+          display: none;
         }
+      }
+    }
+  }
+
+  &__info {
+    margin: 0.25rem 0;
+    // width: 25%;
+
+    @include tablet {
+      width: 20%;
+    }
+  }
+
+  &__subheading {
+    text-transform: uppercase;
+    color: $color-foreground;
+    font-weight: 400;
+
+    @include tablet {
+      padding-bottom: 1rem;
+    }
+  }
+
+  &__text {
+    padding: 0.5rem 0;
+    font-size: 0.75rem;
+    color: $color-background-dark;
+
+    &--date {
+      font-weight: 600;
+      color: $color-background;
     }
 
-    &__subheading {
-        text-transform: uppercase;
-        color: $color-foreground;
-        font-weight: 400;
-
-        @include tablet {
-            padding-bottom: 1rem;
-        }
-        
+    @include desktop {
+      font-size: 0.875rem;
     }
+  }
 
-    &__text {
-        padding: .5rem 0;
-        font-size: .75rem;
-        color: $color-background-dark;
+  &__button {
+    margin: 0.5rem 0;
+    text-decoration: none;
+    color: $color-white;
+    background-color: $color-background;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 2.5rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
 
-        &--date {
-            font-weight: 600;
-            color: $color-background;
-        }
-
-        @include desktop {
-            font-size: .875rem;
-        }
+    @include tablet {
+      width: auto;
+      padding: 0 2rem;
     }
-
-    &__button {
-        margin: .5rem 0;
-        text-decoration: none;
-        color: $color-white;
-        background-color: $color-background;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 2.5rem;
-        border-radius: 4px;
-        text-transform: uppercase;
-        font-size: .875rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-
-        @include tablet {
-            width: auto;
-            padding: 0 2rem;
-        }
-    }
+  }
 }
-
-

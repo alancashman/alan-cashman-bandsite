@@ -29,6 +29,7 @@ axios.get(`${apiUrl}?api_key=${apiKey}`).then((response) => {
   const sortedData = data.sort((a, b) => {
     return a.timestamp - b.timestamp;
   });
+  //  Render comments to page
   sortedData.forEach((comment) => {
     loadComment(comment);
   });
@@ -42,7 +43,9 @@ const formEl = document.querySelector(".comments-form");
 function loadComment(comment) {
   // Set date format options
   const dateOptions = {
-    dateStyle: "short",
+    month: "2-digit",
+    year: "numeric",
+    day: "2-digit",
   };
   // Create comment element
   const commentEl = document.createElement("li");
