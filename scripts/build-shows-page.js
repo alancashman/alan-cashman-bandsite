@@ -1,47 +1,55 @@
 const apiKey = "bd3f5686-62d3-4ebd-b365-a72d11dae6aa";
 const apiUrl = "https://project-1-api.herokuapp.com/showdates";
 
-const showsArray = [
-  {
-    id: 0,
-    date: "Mon Sept 06 2021",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-  {
-    id: 1,
-    date: "Tue Sept 21 2021",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-  {
-    id: 2,
-    date: "Fri Oct 15 2021",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-  {
-    id: 3,
-    date: "Sat Nov 06 2021",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-  {
-    id: 4,
-    date: "Fri Nov 26 2021",
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-  },
-  {
-    id: 5,
-    date: "Wed Dec 15 2021",
-    venue: "Press Club",
-    location: "San Francisco, CA",
-  },
-];
+// const showsArray = [
+//   {
+//     id: 0,
+//     date: "Mon Sept 06 2021",
+//     venue: "Ronald Lane",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     id: 1,
+//     date: "Tue Sept 21 2021",
+//     venue: "Pier 3 East",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     id: 2,
+//     date: "Fri Oct 15 2021",
+//     venue: "View Lounge",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     id: 3,
+//     date: "Sat Nov 06 2021",
+//     venue: "Hyatt Agency",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     id: 4,
+//     date: "Fri Nov 26 2021",
+//     venue: "Moscow Center",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     id: 5,
+//     date: "Wed Dec 15 2021",
+//     venue: "Press Club",
+//     location: "San Francisco, CA",
+//   },
+// ];
 
 // POPULATE SHOWS LIST FUNCTION
+
 function renderShows(date, venue, location, container) {
+  // Create date render format
+  const dateOptions = {
+    weekday: "short",
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  };
   // Create list item
   const showEl = document.createElement("li");
   showEl.classList.add("shows__item");
@@ -56,7 +64,7 @@ function renderShows(date, venue, location, container) {
   dateHeaderEl.classList.add("shows__subheading");
 
   const dateEl = document.createElement("p");
-  dateEl.innerText = new Date(date).toLocaleDateString("en-us");
+  dateEl.innerText = new Date(date).toLocaleDateString("en-us", dateOptions);
   dateEl.classList.add("shows__text--date");
   dateEl.classList.add("shows__text");
 
@@ -123,17 +131,7 @@ axios
       renderShows(show.date, show.place, show.location, showsList);
     });
   })
-  .then((response) => {
-    console.log(response);
-    for (let i = 0; i < showEls.length; i++) {
-      showEls[i].addEventListener("click", function () {
-        showEls.forEach((show) => {
-          show.classList.remove("shows__item--selected");
-        });
-        showEls[i].classList.toggle("shows__item--selected");
-      });
-    }
-  })
+  .then((response) => {})
   .catch((error) => {
     console.error("Error! ", error);
   });

@@ -1,5 +1,5 @@
 const apiKey = "bd3f5686-62d3-4ebd-b365-a72d11dae6aa";
-const apiUrl = "https://project-1-api.herokuapp.com/comments/";
+const apiUrl = "https://project-1-api.herokuapp.com/comments";
 
 const commentsArray = [
   {
@@ -22,12 +22,28 @@ const commentsArray = [
   },
 ];
 
+// GET COMMENTS FROM API //
+axios.get(`${apiUrl}?api_key=${apiKey}`).then((response) => {
+  const data = response.data;
+  //   Sort comments by date
+  const sortedData = data.sort((a, b) => {
+    return a.timestamp - b.timestamp;
+  });
+  sortedData.forEach((comment) => {
+    loadComment(comment);
+  });
+});
+
 // COMMENTS LIST //
 
 const commentsListEl = document.querySelector(".comments-list");
 const formEl = document.querySelector(".comments-form");
 
 function loadComment(comment) {
+  // Set date format options
+  const dateOptions = {
+    dateStyle: "short",
+  };
   // Create comment element
   const commentEl = document.createElement("li");
   commentEl.classList.add("comment");
@@ -60,13 +76,16 @@ function loadComment(comment) {
 
   // Add comment date
   const commentDateEl = document.createElement("p");
-  commentDateEl.innerText = comment.date;
+  commentDateEl.innerText = new Date(comment.timestamp).toLocaleDateString(
+    "en-us",
+    dateOptions
+  );
   commentDateEl.classList.add("comment__date");
   commentRightHeader.appendChild(commentDateEl);
 
   // Add comment body
   const commentTextEl = document.createElement("p");
-  commentTextEl.innerText = comment.commentText;
+  commentTextEl.innerText = comment.comment;
   commentTextEl.classList.add("comment__text");
   commentRightEl.appendChild(commentTextEl);
 
@@ -84,8 +103,6 @@ const formCommentField = document.querySelector(
 formEl.addEventListener("submit", (e) => {
   // Prevent form submission
   e.preventDefault();
-  // Clear existing comments
-  commentsListEl.innerText = "";
 
   // Form validation
   if (e.target.name.value === "") {
@@ -117,21 +134,28 @@ formEl.addEventListener("submit", (e) => {
   // Build new comment object
   const comment = {
     name: e.target.name.value,
-    date: new Date(Date.now()).toLocaleDateString("en-us"),
-    commentText: e.target.comment.value,
+    comment: e.target.comment.value,
   };
   // Clear form inputs
   e.target.reset();
 
+  // POST comment to API
+  axios.post(`${apiUrl}?api_key=${apiKey}`, comment).then((response) => {
+    // console.log(response);
+    const data = response.data;
+    console.log(data);
+    loadComment(data);
+  });
+
   // Push new comment to commentsArray
-  commentsArray.push(comment);
-  // Loop through commentsArray and render to page
-  for (let i = 0; i < commentsArray.length; i++) {
-    loadComment(commentsArray[i]);
-  }
+  //   commentsArray.push(comment);
+  //   // Loop through commentsArray and render to page
+  //   for (let i = 0; i < commentsArray.length; i++) {
+  //     loadComment(commentsArray[i]);
+  //   }
 });
 
 // Initialize comments on page load
-for (let i = 0; i < commentsArray.length; i++) {
-  loadComment(commentsArray[i]);
-}
+// for (let i = 0; i < commentsArray.length; i++) {
+//   loadComment(commentsArray[i]);
+// }
