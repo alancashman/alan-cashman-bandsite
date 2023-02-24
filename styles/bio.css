@@ -656,6 +656,34 @@
   font-size: 0.75rem;
   color: #afafaf;
 }
+.comment__options-row {
+  padding-top: 1rem;
+}
+.comment__delete-button {
+  padding: 0.25rem 0.5rem;
+  border-radius: 10px;
+  border: 1px solid #afafaf;
+  background-color: #fafafa;
+  transition: all 0.2s;
+}
+.comment__delete-button:hover {
+  background-color: #afafaf;
+  color: #fff;
+}
+.comment__likes-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 10%;
+}
+.comment__like-button {
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+.comment__like-counter {
+  font-size: 0.875rem;
+}
 .comment__text {
   padding-top: 0.5rem;
   font-size: 0.75rem;

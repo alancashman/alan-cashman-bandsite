@@ -1,27 +1,6 @@
 const apiKey = "bd3f5686-62d3-4ebd-b365-a72d11dae6aa";
 const apiUrl = "https://project-1-api.herokuapp.com/comments";
 
-const commentsArray = [
-  {
-    name: "Miles Acosta",
-    date: "12/20/2020",
-    commentText:
-      "I can't stop listening.  Every time I hear one of their songs - the vocals - it gives me goosebumps.  Shivers straight down my spine.  What a beautiful expression of creativity.  Can't get enough.",
-  },
-  {
-    name: "Emilie Beach",
-    date: "01/09/2021",
-    commentText:
-      "I feel blessed to have seen them in person.  What a show!  They were just perfection. If there was one day of my life I could relive, this would be it.  What an incredible day.",
-  },
-  {
-    name: "Connor Walton",
-    date: "02/17/2021",
-    commentText:
-      "This is art.  This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence.  Let us appreciate this for what it is and what it contains.",
-  },
-];
-
 // GET COMMENTS FROM API //
 axios.get(`${apiUrl}?api_key=${apiKey}`).then((response) => {
   const data = response.data;
@@ -31,6 +10,7 @@ axios.get(`${apiUrl}?api_key=${apiKey}`).then((response) => {
   });
   //  Render comments to page
   sortedData.forEach((comment) => {
+    console.log(comment);
     loadComment(comment);
   });
 });
@@ -77,6 +57,10 @@ function loadComment(comment) {
   commentNameEl.classList.add("comment__name");
   commentRightHeader.appendChild(commentNameEl);
 
+  // Add comment ID
+  const commentId = comment.id;
+  console.log(commentEl.id);
+
   // Add comment date
   const commentDateEl = document.createElement("p");
   commentDateEl.innerText = new Date(comment.timestamp).toLocaleDateString(
@@ -92,8 +76,56 @@ function loadComment(comment) {
   commentTextEl.classList.add("comment__text");
   commentRightEl.appendChild(commentTextEl);
 
+  // Add comment options row
+  const commentOptionsRow = document.createElement("div");
+  commentOptionsRow.classList.add("comment__header-row");
+  commentOptionsRow.classList.add("comment__options-row");
+
+  // Add comment delete button
+  const commentDeleteBtn = document.createElement("button");
+  commentDeleteBtn.classList.add("comment__delete-button");
+  commentDeleteBtn.innerText = "Delete Comment";
+
+  // Add comment like container
+  const commentLikeContainer = document.createElement(
+    "comment__likes-container"
+  );
+  commentLikeContainer.classList.add("comment__likes-container");
+
+  // Add comment like button
+  const commentLikeBtn = document.createElement("button");
+  commentLikeBtn.classList.add("comment__like-button");
+  commentLikeBtn.innerText = "👍";
+
+  // Add comment like counter
+  const commentLikeCounter = document.createElement("p");
+  commentLikeCounter.classList.add("comment__like-counter");
+  commentLikeCounter.innerText = 0;
+
+  // Append contents to comment options row
+  commentLikeContainer.append(commentLikeBtn);
+  commentLikeContainer.append(commentLikeCounter);
+  commentOptionsRow.append(commentDeleteBtn);
+  commentOptionsRow.append(commentLikeContainer);
+  commentRightEl.append(commentOptionsRow);
+
   // Append comment <li> to comments <ul>
   commentsListEl.prepend(commentEl);
+
+  // Add delete button functionality
+  commentDeleteBtn.addEventListener("click", function () {
+    // Remove DOM element
+    const comment = this.closest(".comment");
+    console.log(comment.dataset);
+    comment.remove();
+
+    // Delete comment from server
+    axios
+      .delete(`${apiUrl}/${commentId}?api_key=${apiKey}`)
+      .then((response) => {
+        console.log(response);
+      });
+  });
 }
 
 // FORM //
@@ -111,9 +143,7 @@ formEl.addEventListener("submit", (e) => {
   if (e.target.name.value === "") {
     formNameField.classList.add("comments-form__field--invalid");
     formNameField.setAttribute("placeholder", "Please input your name.");
-    commentsArray.forEach((comment) => {
-      loadComment(comment);
-    });
+
     return;
   }
 
@@ -123,9 +153,7 @@ formEl.addEventListener("submit", (e) => {
       "placeholder",
       "Please add a comment to be posted."
     );
-    commentsArray.forEach((comment) => {
-      loadComment(comment);
-    });
+
     return;
   } else {
     formNameField.classList.remove("comments-form__field--invalid");
@@ -149,16 +177,13 @@ formEl.addEventListener("submit", (e) => {
     console.log(data);
     loadComment(data);
   });
-
-  // Push new comment to commentsArray
-  //   commentsArray.push(comment);
-  //   // Loop through commentsArray and render to page
-  //   for (let i = 0; i < commentsArray.length; i++) {
-  //     loadComment(commentsArray[i]);
-  //   }
 });
 
-// Initialize comments on page load
-// for (let i = 0; i < commentsArray.length; i++) {
-//   loadComment(commentsArray[i]);
+// DELETE BUTTON
+
+// function deleteComment(comment) {
+//   // Remove DOM element
+//   console.log(this.closest(".comment"));
+//   const comment = this.closest(".comment");
+//   comment.remove();
 // }

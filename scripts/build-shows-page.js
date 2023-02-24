@@ -104,10 +104,14 @@ axios
   .then((response) => {
     const data = response.data;
     console.log(data);
+    // Sort concerts by date
+    const sortedData = data.sort((a, b) => {
+      return a.date - b.date;
+    });
     // Get shows list
     const showsList = document.querySelector(".shows__list");
     // Render shows to list
-    data.forEach((show) => {
+    sortedData.forEach((show) => {
       renderShows(show.date, show.place, show.location, showsList);
     });
     //   Add selection functionality
