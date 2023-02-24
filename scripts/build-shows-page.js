@@ -75,11 +75,6 @@ function renderShows(date, venue, location, container) {
   showEl.appendChild(showLocationSection);
   showEl.appendChild(ticketsButtonEl);
 
-  //   Add selection functionality
-  //   showEl.addEventListener("click", function () {
-  //     showEl.classList.toggle("shows__item--selected");
-  //   });
-
   // Append <li> to showsList <ul>
   container.appendChild(showEl);
 }

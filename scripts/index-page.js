@@ -11,7 +11,7 @@ axios.get(`${apiUrl}?api_key=${apiKey}`).then((response) => {
   //  Render comments to page
   sortedData.forEach((comment) => {
     console.log(comment);
-    loadComment(comment);
+    displayComment(comment);
   });
 });
 
@@ -20,7 +20,7 @@ axios.get(`${apiUrl}?api_key=${apiKey}`).then((response) => {
 const commentsListEl = document.querySelector(".comments-list");
 const formEl = document.querySelector(".comments-form");
 
-function loadComment(comment) {
+function displayComment(comment) {
   // Set date format options
   const dateOptions = {
     month: "2-digit",
@@ -30,6 +30,10 @@ function loadComment(comment) {
   // Create comment element
   const commentEl = document.createElement("li");
   commentEl.classList.add("comment");
+
+  // Add comment ID and likes
+  const commentId = comment.id;
+  const commentLikes = comment.likes;
 
   // Create left side of comment element content
   const commentLeftEl = document.createElement("div");
@@ -57,15 +61,10 @@ function loadComment(comment) {
   commentNameEl.classList.add("comment__name");
   commentRightHeader.appendChild(commentNameEl);
 
-  // Add comment ID
-  const commentId = comment.id;
-  console.log(commentEl.id);
-
   // Add comment date
   const commentDateEl = document.createElement("p");
   commentDateEl.innerText = new Date(comment.timestamp).toLocaleDateString(
-    "en-us",
-    dateOptions
+    "en-us"
   );
   commentDateEl.classList.add("comment__date");
   commentRightHeader.appendChild(commentDateEl);
@@ -100,7 +99,7 @@ function loadComment(comment) {
   // Add comment like counter
   const commentLikeCounter = document.createElement("p");
   commentLikeCounter.classList.add("comment__like-counter");
-  commentLikeCounter.innerText = 0;
+  commentLikeCounter.innerText = commentLikes;
 
   // Append contents to comment options row
   commentLikeContainer.append(commentLikeBtn);
@@ -113,19 +112,34 @@ function loadComment(comment) {
   commentsListEl.prepend(commentEl);
 
   // Add delete button functionality
-  commentDeleteBtn.addEventListener("click", function () {
-    // Remove DOM element
-    const comment = this.closest(".comment");
-    console.log(comment.dataset);
-    comment.remove();
-
-    // Delete comment from server
-    axios
-      .delete(`${apiUrl}/${commentId}?api_key=${apiKey}`)
-      .then((response) => {
-        console.log(response);
-      });
+  commentDeleteBtn.addEventListener("click", () => {
+    deleteComment(commentEl, commentId);
   });
+
+  // Add like button functionality
+  commentLikeBtn.addEventListener("click", function () {
+    // Increment like counter
+    const likeCounter = commentLikeBtn.nextElementSibling;
+    likeCounter.innerText++;
+    console.log(`${apiUrl}/${commentId}/?api_key=${apiKey}`);
+    // Like comment on server
+    axios
+      .put(`${apiUrl}/${commentId}/like?api_key=${apiKey}`)
+      .then((response) => console.log(response));
+  });
+}
+
+// DELETE COMMENT
+
+function deleteComment(commentEl, commentId) {
+  // Remove DOM Element
+  const comment = commentEl.closest(".comment");
+  comment.remove();
+
+  // Delete comment from server
+  axios
+    .delete(`${apiUrl}/${commentId}?api_key=${apiKey}`)
+    .then((response) => console.log(response));
 }
 
 // FORM //
@@ -175,15 +189,6 @@ formEl.addEventListener("submit", (e) => {
     // console.log(response);
     const data = response.data;
     console.log(data);
-    loadComment(data);
+    displayComment(data);
   });
 });
-
-// DELETE BUTTON
-
-// function deleteComment(comment) {
-//   // Remove DOM element
-//   console.log(this.closest(".comment"));
-//   const comment = this.closest(".comment");
-//   comment.remove();
-// }

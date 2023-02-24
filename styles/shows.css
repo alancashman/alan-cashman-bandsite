@@ -179,6 +179,9 @@
   align-items: center;
   padding-top: 0.25rem;
   font-weight: normal;
+  position: fixed;
+  z-index: 20;
+  width: 100%;
 }
 @media (min-width: 768px) {
   .header {
