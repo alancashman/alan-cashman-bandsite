@@ -64,7 +64,8 @@ function displayComment(comment) {
   // Add comment date
   const commentDateEl = document.createElement("p");
   commentDateEl.innerText = new Date(comment.timestamp).toLocaleDateString(
-    "en-us"
+    "en-us",
+    dateOptions
   );
   commentDateEl.classList.add("comment__date");
   commentRightHeader.appendChild(commentDateEl);
@@ -81,9 +82,12 @@ function displayComment(comment) {
   commentOptionsRow.classList.add("comment__options-row");
 
   // Add comment delete button
-  const commentDeleteBtn = document.createElement("button");
+  // const commentDeleteBtn = document.createElement("button");
+  // commentDeleteBtn.classList.add("comment__delete-button");
+  // commentDeleteBtn.innerText = "Delete Comment";
+  const commentDeleteBtn = document.createElement("img");
+  commentDeleteBtn.src = "../assets/icons/icon-delete.svg";
   commentDeleteBtn.classList.add("comment__delete-button");
-  commentDeleteBtn.innerText = "Delete Comment";
 
   // Add comment like container
   const commentLikeContainer = document.createElement(
@@ -92,9 +96,9 @@ function displayComment(comment) {
   commentLikeContainer.classList.add("comment__likes-container");
 
   // Add comment like button
-  const commentLikeBtn = document.createElement("button");
+  const commentLikeBtn = document.createElement("img");
+  commentLikeBtn.src = "../assets/icons/icon-like.svg";
   commentLikeBtn.classList.add("comment__like-button");
-  commentLikeBtn.innerText = "👍";
 
   // Add comment like counter
   const commentLikeCounter = document.createElement("p");
@@ -117,16 +121,22 @@ function displayComment(comment) {
   });
 
   // Add like button functionality
-  commentLikeBtn.addEventListener("click", function () {
-    // Increment like counter
-    const likeCounter = commentLikeBtn.nextElementSibling;
-    likeCounter.innerText++;
-    console.log(`${apiUrl}/${commentId}/?api_key=${apiKey}`);
-    // Like comment on server
-    axios
-      .put(`${apiUrl}/${commentId}/like?api_key=${apiKey}`)
-      .then((response) => console.log(response));
+  commentLikeBtn.addEventListener("click", () => {
+    likeComment(commentEl, commentId);
   });
+}
+
+// LIKE COMMENT
+
+function likeComment(commentEl, commentId) {
+  // Increment like counter
+  const commentLikeCounter = commentEl.querySelector(".comment__like-counter");
+  commentLikeCounter.innerText++;
+
+  // Like comment on server
+  axios
+    .put(`${apiUrl}/${commentId}/like?api_key=${apiKey}`)
+    .then((response) => console.log(response));
 }
 
 // DELETE COMMENT

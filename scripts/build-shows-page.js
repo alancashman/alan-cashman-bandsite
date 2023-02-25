@@ -4,13 +4,6 @@ const apiUrl = "https://project-1-api.herokuapp.com/showdates";
 // renderShows FUNCTION
 
 function renderShows(date, venue, location, container) {
-  // Create date render format
-  const dateOptions = {
-    weekday: "short",
-    month: "short",
-    day: "2-digit",
-    year: "numeric",
-  };
   // Create list item
   const showEl = document.createElement("li");
   showEl.classList.add("shows__item");
@@ -25,7 +18,7 @@ function renderShows(date, venue, location, container) {
   dateHeaderEl.classList.add("shows__subheading");
 
   const dateEl = document.createElement("p");
-  dateEl.innerText = new Date(date).toLocaleDateString("en-us", dateOptions);
+  dateEl.innerText = new Date(date).toDateString();
   dateEl.classList.add("shows__text--date");
   dateEl.classList.add("shows__text");
 
@@ -98,21 +91,26 @@ axios
   .get(`${apiUrl}?api_key=${apiKey}`)
   .then((response) => {
     const data = response.data;
-    console.log(data);
+
     // Sort concerts by date
     const sortedData = data.sort((a, b) => {
       return a.date - b.date;
     });
+
     // Get shows list
     const showsList = document.querySelector(".shows__list");
-    // Render shows to list
+
+    // Loop through and render shows to list
     sortedData.forEach((show) => {
       renderShows(show.date, show.place, show.location, showsList);
     });
-    //   Add selection functionality
+
+    // Add selection functionality
     const showEls = document.querySelectorAll(".shows__item");
     addSelectionListeners(showEls);
   })
+
+  // Error handling
   .catch((error) => {
     console.error("Error! ", error);
   });

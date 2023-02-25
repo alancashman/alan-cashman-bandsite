@@ -15,17 +15,20 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 1rem;
+  margin-top: 82px;
 
   position: relative;
 
   @include tablet {
     height: 31rem;
+    margin-top: 70px;
   }
 
   @include desktop {
     height: 39rem;
     flex-direction: row;
     align-items: center;
+    margin-top: 86px;
   }
 
   &__text {
@@ -232,6 +235,14 @@
     font-weight: 600;
     margin-bottom: 0.5rem;
     cursor: pointer;
+
+    &:hover {
+      background-color: $color-background-dark;
+    }
+
+    &:active {
+      transform: scale(0.98) translate(1%, 1%);
+    }
 
     @include tablet {
       width: auto;
