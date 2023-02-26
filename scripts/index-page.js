@@ -21,12 +21,6 @@ const commentsListEl = document.querySelector(".comments-list");
 const formEl = document.querySelector(".comments-form");
 
 function displayComment(comment) {
-  // Set date format options
-  const dateOptions = {
-    month: "2-digit",
-    year: "numeric",
-    day: "2-digit",
-  };
   // Create comment element
   const commentEl = document.createElement("li");
   commentEl.classList.add("comment");
@@ -63,10 +57,8 @@ function displayComment(comment) {
 
   // Add comment date
   const commentDateEl = document.createElement("p");
-  commentDateEl.innerText = new Date(comment.timestamp).toLocaleDateString(
-    "en-us",
-    dateOptions
-  );
+  const relativeDateString = getRelativeTimestamp(comment.timestamp);
+  commentDateEl.innerText = relativeDateString;
   commentDateEl.classList.add("comment__date");
   commentRightHeader.appendChild(commentDateEl);
 
@@ -150,6 +142,51 @@ function deleteComment(commentEl, commentId) {
   axios
     .delete(`${apiUrl}/${commentId}?api_key=${apiKey}`)
     .then((response) => console.log(response));
+}
+
+// GET RELATIVE TIMESTAMP
+
+function getRelativeTimestamp(timestamp) {
+  const currentDate = new Date();
+  const currentTimestamp = currentDate.getTime();
+
+  const differenceInSeconds = (currentTimestamp - timestamp) / 1000;
+  let output = ``;
+  if (differenceInSeconds <= 0) {
+    // comment was just posted
+    output = `Just now`;
+  } else if (differenceInSeconds < 60) {
+    // less than a minute has passed
+    Math.floor(differenceInSeconds) === 1
+      ? (output = `${Math.floor(differenceInSeconds)} second ago`)
+      : (output = `${Math.floor(differenceInSeconds)} seconds ago`);
+  } else if (differenceInSeconds < 3600) {
+    // less than an hour has passed
+    Math.floor(differenceInSeconds / 60) === 1
+      ? (output = `${Math.floor(differenceInSeconds / 60)} minute ago`)
+      : (output = `${Math.floor(differenceInSeconds / 60)} minutes ago`);
+  } else if (differenceInSeconds < 86400) {
+    // less than a day has passed
+    Math.floor(differenceInSeconds / 3600) === 1
+      ? (output = `${Math.floor(differenceInSeconds / 3600)} hour ago`)
+      : (output = `${Math.floor(differenceInSeconds / 3600)} hours ago`);
+  } else if (differenceInSeconds < 2620800) {
+    // less than a month has passed
+    Math.floor(differenceInSeconds / 86400) === 1
+      ? (output = `${Math.floor(differenceInSeconds / 86400)} day ago`)
+      : (output = `${Math.floor(differenceInSeconds / 86400)} days ago`);
+  } else if (differenceInSeconds < 31449600) {
+    // less than a year has passed
+    Math.floor(differenceInSeconds / 2620800) === 1
+      ? (output = `${Math.floor(difference / 2620800)} month ago`)
+      : (output = `${Math.floor(difference / 2620800)} months ago`);
+  } else {
+    // more than a year has passed
+    Math.floor(differenceInSeconds / 31449600) === 1
+      ? (output = `${Math.floor(differenceInSeconds / 31449600)} year ago`)
+      : (output = `${Math.floor(differenceInSeconds / 31449600)} years ago`);
+  }
+  return output;
 }
 
 // FORM //
