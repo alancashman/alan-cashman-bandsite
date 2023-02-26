@@ -78,7 +78,7 @@ function displayComment(comment) {
   // commentDeleteBtn.classList.add("comment__delete-button");
   // commentDeleteBtn.innerText = "Delete Comment";
   const commentDeleteBtn = document.createElement("img");
-  commentDeleteBtn.src = "../assets/icons/icon-delete.svg";
+  commentDeleteBtn.src = "./assets/icons/icon-delete.svg";
   commentDeleteBtn.classList.add("comment__delete-button");
 
   // Add comment like container
@@ -89,7 +89,7 @@ function displayComment(comment) {
 
   // Add comment like button
   const commentLikeBtn = document.createElement("img");
-  commentLikeBtn.src = "../assets/icons/icon-like.svg";
+  commentLikeBtn.src = "./assets/icons/icon-like.svg";
   commentLikeBtn.classList.add("comment__like-button");
 
   // Add comment like counter
