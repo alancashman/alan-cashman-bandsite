@@ -152,7 +152,7 @@ function getRelativeTimestamp(timestamp) {
 
   const differenceInSeconds = (currentTimestamp - timestamp) / 1000;
   let output = ``;
-  if (differenceInSeconds <= 0) {
+  if (Math.floor(differenceInSeconds) <= 0) {
     // comment was just posted
     output = `Just now`;
   } else if (differenceInSeconds < 60) {
